@@ -1,0 +1,27 @@
+@import '../../bower_components/meetup-swatches/sass/colors';
+@import '../../bower_components/sassquatch2/sass/globals';
+@import '../../bower_components/sassquatch2/sass/util';
+@import 'globals-sq3';
+@import 'tweaks'; // TO BE CONSIDERED AS GLOBAL CHANGES
+@import 'icons';
+@import 'nav';
+
+/*
+---------------------
+SQ3 CANDIDATE
+---------------------
+*/
+
+/*
+	TYPE
+*/
+
+/* _body-text.scss */
+body {
+	font-family: $font;
+}
+
+/* _headings.scss */
+.text--display {
+	font-weight: $W_bold;
+}

@@ -1,0 +1,25 @@
+{
+  "name": "foundation-demo",
+  "version": "0.0.1",
+  "description": "Foundation/sq2 framework training",
+  "ignore": [
+    "Gemfile",
+    ".ruby-version",
+    ".bowerrc",
+    "**/*.sh",
+    "**/*.txt",
+    "**/*.lock"
+  ],
+  "dependencies": {
+    "sassquatch2": null,
+		"jquery": null,
+		"moment": null,
+		"ractive": null,
+		"ractive-load": null,
+		"rlite": null,
+		"jquery.cookie": null,
+		"jquery-autosize": null,
+		"jquery-waypoints": "~2"
+  },
+  "license": "MIT"
+}

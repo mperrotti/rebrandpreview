@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+	<title>Meetup</title>
+
+	<!-- Whitney -->
+	<link rel="stylesheet" href="./assets/whitney.css" />
+
+	<!-- Icon font (just until we get SVG working) -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- CSS Hotfixes (mostly just compensating for Chapstick components) -->
+	<link rel="stylesheet" href="assets/css/shim.css" />
+
+	<!-- Load Sassquatch2 -->
+	<link rel="stylesheet" href="assets/css/sq2.css" />
+
+	<!-- Page-specific styles -->
+	<link rel="stylesheet" href="assets/css/alienHome.css" />
+
+	<!-- JS to load before the page loads -->
+	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/dist/depends.min.js"></script>
+
+</head>
+
+<body>
+
+<script type="text/template" id="main-template">
+	<div class="stripe stripe--photoHero inverted" style="background-image: url('assets/img/heroPlaceholder2.jpg');">
+		<div class="bounds stripe-heroContent">
+			<div class="align--center">
+				<h3 class="text--display">Meet your people.</h3>
+				<p>Local communities meeting up around shared interests</p>
+			</div>
+		</div>
+		<div class="padding--all photoOverlay">
+			<div class="bounds">
+				<div class="chunk row">
+					<div class="row-item">
+						<label for="topic-search" class="visibility--a11yHide">Search for a topic</label>
+						<input class="input--withIcon" id="topic-search" type="text" placeholder="What are you interested in?" style="background-image:url('assets/img/magnifying-glass.svg')" />
+					</div>
+
+					<div class="row-item row-item--shrink">
+						<label for="city-search" class="visibility--a11yHide">Enter your city</label>
+						<input class="input--withIcon" id="city-search" type="text" placeholder="Enter your city" value="New York, NY" style="background-image:url('assets/img/magnifying-glass.svg')" />
+					</div>
+
+					<div class="row-item row-item--shrink">
+						<button class="button button--primary">Search</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="stripe"><div class="bounds">
+		<h3 class="text--headline">Prototype lives here</h3>
+	</div></div>
+
+	<footer class="stripe stripe--inverted inverted">
+		<div class="bounds">
+
+			<div class="spreadable atMedium_spreadable--spread">
+				<div class="spreadable-item chunk">
+					<a href="#" class="text--bold">Start a Meetup Group</a>
+				</div>
+				<div class="spreadable-item spreadable-item--shrink chunk">
+					<a href="#" >Log out</a>
+				</div>
+			</div>
+
+			<ul class="inlineblockList chunk bordered">
+				<li class="chunk"><a href="#">Help</a></li>
+				<li class="chunk"><a href="#">About Us</a></li>
+				<li class="chunk"><a href="#">Jobs</a></li>
+				<li class="chunk"><a href="#">Blog</a></li>
+				<li class="chunk"><a href="#">Tech Blog</a></li>
+				<li class="chunk"><a href="#">API</a></li>
+				<li class="chunk"><a href="#">Made in NYC</a></li>
+			</ul>
+
+			<ul class="inlineblockList text--small">
+				<li class="text--secondary">© 2015 Meetup</li>
+				<li class="chunk"><a href="#">Privacy</a></li>
+				<li class="chunk"><a href="#">Terms</a></li>
+			</ul>
+		</div>
+
+	</footer>
+</script>
+
+<!-- SVG icons -->
+<div id='icon-container'></div>
+<script src='assets/icons/icons.js'></script>
+
+<!-- JS -->
+<script type="text/javascript" src="assets/js/dist/scripts.min.js"></script>
+
+</body>
+</html>
