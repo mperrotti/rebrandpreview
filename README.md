@@ -6,7 +6,7 @@ Message me on Slack if you have issues.
 This is a prototype for what we're thinking about for guest (aka: alien) home as a part of the rebrand
 
 ## Mike P's feedback on intial mocks
-*People who aren't me:* don't try and make sense of these notes, the numbers correspond to a marked up mock
+**People who aren't me:** don't try and make sense of these notes, the numbers correspond to a marked up mock
 
 * 0 - This is really wide for a normal interface, **I recommend we make this the wide variant of `.bounds`**
 * 1 - Let's test this height as the default height for all `.stripe--photoHero`
