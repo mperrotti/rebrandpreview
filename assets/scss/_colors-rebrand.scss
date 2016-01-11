@@ -1,0 +1,16 @@
+// Base color pallette ()
+$C_red   : rgb(238, 28, 64);
+$C_black : rgb(15, 23, 33);
+$C_blue  : rgb(31, 36, 204);
+
+// Text colors ()
+
+// UI Colors ()
+$C_accent     : $C_red;
+$C_accentDark : $C_black;
+$C_link       : $C_blue;
+
+$C_photoOverlay : transparentize($C_black, .7);
+
+// Background colors ()
+$C_contentBGInverted: $C_black;

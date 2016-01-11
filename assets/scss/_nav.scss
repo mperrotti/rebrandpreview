@@ -34,10 +34,10 @@
 }
 
 .mainNav-logo {
-	height: $media-xs;
-	@include atMediaUp(medium) {
-		height: $media-s;
-	}
+	height: $media-s;
+	// @include atMediaUp(medium) {
+	// 	height: $media-s;
+	// }
 }
 
 .mainNav-item-label {

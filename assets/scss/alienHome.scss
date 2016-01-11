@@ -2,18 +2,21 @@
 @import '../../bower_components/sassquatch2/sass/globals';
 @import '../../bower_components/sassquatch2/sass/util';
 @import 'globals-sq3';
+@import 'colors-rebrand';
 @import 'tweaks'; // TO BE CONSIDERED AS GLOBAL CHANGES
 @import 'icons';
 @import 'nav';
 
 /*
----------------------
+*****************************
 SQ3 CANDIDATE
----------------------
+*****************************
 */
 
 /*
+-----------------------------
 	TYPE
+-----------------------------
 */
 
 /* _body-text.scss */
@@ -21,7 +24,280 @@ body {
 	font-family: $font;
 }
 
+a {
+	color: inherit;
+	text-decoration: none;
+	&.link,
+	.runningText & {
+		@extend %link;
+		&.button {
+			text-decoration: none;
+		}
+	}
+}
+
 /* _headings.scss */
 .text--display {
 	font-weight: $W_bold;
+}
+
+.text--headline {
+	font-weight: $W_bold;
+}
+
+/* _type.scss */
+%link {
+	@include color-all($C_link);
+	&:hover, &:focus, &:active {
+		text-decoration: underline;
+	}
+}
+
+/*
+-----------------------------
+	LAYOUT
+-----------------------------
+*/
+
+/* _stripe.scss */
+.stripe-heroContent--full { // new variant
+	max-width: none;
+	width: 100%;
+}
+
+.stripe--inverted {
+	background-color: $C_contentBGInverted; // no change, just different color
+}
+
+.stripe--noBorder {
+	border-top: none;
+	padding-top: $space-double;
+}
+
+/* NEW: _photoOverlay.scss */
+.photoOverlay {
+	background-color: $C_photoOverlay;
+}
+
+/* _gridList.scss */
+.gridList {
+	> li {
+		padding-bottom: $space-double;
+	}
+}
+
+.gridList-item {
+	padding-bottom: $space-double;
+}
+
+/* _inlineblockList.scss */
+
+.inlineblockList--bulleted > li {
+
+	&:after {
+		content: '·';
+		padding-left: $space-half;
+	}
+
+	.attachment & {
+		padding-right: $space-quarter;
+
+		&:after {
+			padding-left: $space-quarter;
+		}
+	}
+
+
+	&:last-child {
+		&:after {
+			display: none;
+		}
+	}
+}
+
+/*
+-----------------------------
+	UI COMPONENTS
+-----------------------------
+*/
+
+/* _buttons.scss */
+$_hoverChange: 8%;
+
+.button {
+	background: $C_accentDark;
+	color: $C_textPrimaryInverted;
+	padding: $space-half $space;
+	min-height: ($font-size * $line-height) + $space;
+	box-shadow: none !important;
+
+	use {
+		fill: $C_textPrimaryInverted;
+	}
+
+	&:hover {
+		background: lighten($C_accentDark, $_hoverChange) !important;
+	}
+}
+.button--primary {
+	background: $C_accent !important;
+	&:hover {
+		background: darken($C_accent, $_hoverChange) !important;
+	}
+}
+
+/* same as in SQ2, but with rebrand colors */
+.button--bordered {
+	@include color-all( map-get($btn-color-map, "primary") );
+	background: transparent !important;
+	border: $btn-border;
+	font-weight: $W_normal;
+	&:hover,
+	&:active,
+	&:focus {
+		background: transparentize(map-get($btn-color-map, "primary"), .8) !important;
+	}
+}
+
+/* _card.scss */
+.card--group {
+	font-size: $font-size; // killing @include valignChildren(bottom);
+	line-height: $line-height; // killing @include valignChildren(bottom);
+	display: block; // killing @include valignChildren(bottom);
+	&:before { display: none; } // killing @include textProtectionScrim();
+}
+
+.card--group-avatar {
+	box-shadow: 1px 1px 3px rgba(0,0,0,.26); // TODO: record this as a global
+	border: 1px solid $C_contentBG;
+	bottom: -#{$space-half};
+	position: absolute;
+	right: #{$space-half};
+}
+
+/* NEW: _priorityPlus.scss */
+.priorityPlus {
+	@include valignChildren;
+	min-height: $block-2;
+	position: relative;
+}
+.priorityPlus-list {
+	@include display(flex);
+	overflow: hidden;
+}
+.priorityPlus-showAll {
+	@include valignChildren;
+	background: $C_contentBG;
+	bottom: 0;
+	box-shadow: -#{$space-half} 0 $space $C_contentBG;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 1;
+
+	.stripe--collection & {
+		box-shadow: -#{$space-half} 0 $space $C_collectionBGLight;
+	}
+
+	.inverted & {
+		box-shadow: -#{$space-half} 0 $space $C_contentBGInverted;
+	}
+}
+.priorityPlus-showAll.display--none{ // not obeying regular display--none
+	@include display(none);
+}
+
+.priorityPlus--overflowing .priorityPlus-list li:last-child {
+	padding-right: 5em; // set a real thing in js
+}
+
+.priorityPlus--expanded {
+	.priorityPlus-list {
+		@include display(block);
+	}
+
+	.priorityPlus-showAll {
+		border-bottom: 1px solid $C_border;
+		position: relative;
+		box-shadow: none;
+		text-align: right;
+	}
+}
+
+/* _tabs.scss */
+$_tabBorder: 4px; // no change, just needed the var
+.tabs-tab--selected {
+	color: $C_accentDark;
+	border-bottom: $_tabBorder solid $C_accentDark;
+}
+
+.tabs--vert {
+	.tabs-tab {
+		@include display(block);
+		border-bottom: 1px solid $C_border;
+		padding: $space-half $space-half $space-half ($space-half+$_tabBorder);
+		margin-left: 0;
+	}
+	.tabs-tab--selected {
+		border-left: $_tabBorder solid $C_accentDark;
+		border-bottom: 1px solid $C_border;
+		padding: $space-half;
+	}
+}
+
+/* NEW: _well.scss */
+/* Mike P: I don't think this should be it's own 'ui component'. Where does it belong? */
+.well {
+	background: $C_collectionBGLight;
+}
+
+/*
+-----------------------------
+	NEW: ANIMATION
+-----------------------------
+// TODO: This isn't at all scalable yet.
+//       Come up with plan for animations in SQ3.
+*/
+
+/* NEW: _transitions.scss */
+.trans {
+	@include transition-duration($trans-dur);
+	@include transition-timing-function($trans-curve);
+}
+
+.trans--fadeOut {
+	@include transition-property(opacity);
+	opacity: 0;
+}
+
+.trans--fadeIn {
+	@include transition-property(opacity);
+	opacity: 1;
+}
+
+.trans--fadeOutLeft {
+	@include transition-property(transform, opacity);
+	@include transform(translateX(-50px));
+	opacity: 0;
+}
+
+.trans--fadeInLeft {
+	@include transition-property(transform, opacity);
+	@include transform(translateX(0px));
+	opacity: 1;
+}
+
+/*
+-----------------------------
+	ONE-OFF
+-----------------------------
+*/
+.appBadge {
+	background: black;
+	border-radius: 3px;
+	width: 100%;
+	@include atMediaUp(medium) {
+		margin-right: $space-half;
+		width: auto;
+	}
 }
