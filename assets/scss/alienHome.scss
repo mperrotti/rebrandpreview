@@ -255,8 +255,10 @@ $_tabBorder: 4px; // no change, just needed the var
 -----------------------------
 	NEW: ANIMATION
 -----------------------------
-// TODO: come up with plan for animations in SQ3
+// TODO: This isn't at all scalable yet.
+//       Come up with plan for animations in SQ3.
 */
+
 /* NEW: _transitions.scss */
 .trans {
 	@include transition-duration($trans-dur);

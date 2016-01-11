@@ -262,6 +262,30 @@ function priorityPlusSetup() {
 
 }
 
+// CSS transition end callback
+// via https://davidwalsh.name/css-animation-callback
+// TODO: stop from firing for each transitioned property
+function whichTransitionEvent(){
+    var t;
+    var el = document.createElement('fakeelement');
+    var transitions = {
+      'transition':'transitionend',
+      'OTransition':'oTransitionEnd',
+      'MozTransition':'transitionend',
+      'WebkitTransition':'webkitTransitionEnd'
+    };
+
+    for(t in transitions){
+        if( el.style[t] !== undefined ){
+            return transitions[t];
+        }
+    }
+}
+var transitionEvent = whichTransitionEvent();
+function transEndCallback(el, handler) {
+	transitionEvent && el.addEventListener(transitionEvent, handler);
+}
+
 Ractive.transitions.scale = function ( t, params ) {
 
 	var defaults = {
@@ -387,21 +411,3 @@ function defaultRenderCompleteActions($el){
 	}
 	$el.css({backgroundColor: $el.find('[class^=stripe]:last').css('backgroundColor')}); // make last color extend to bottom
 }
-
-function whichTransitionEvent(){
-	var t;
-	var el = document.createElement('fakeelement');
-	var transitions = {
-	  'transition':'transitionend',
-	  'OTransition':'oTransitionEnd',
-	  'MozTransition':'transitionend',
-	  'WebkitTransition':'webkitTransitionEnd'
-	}
-
-	for(t in transitions){
-		if( el.style[t] !== undefined ){
-			return transitions[t];
-		}
-	}
-}
-var transitionEnd = whichTransitionEvent();
