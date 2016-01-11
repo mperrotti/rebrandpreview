@@ -2,6 +2,14 @@
   Styles I'd like to see make it into SQ2
 */
 
+.spreadable--center {
+	@include justify-content(center);
+}
+
+.span--100 { //already there, just need to update
+	width: 100%;
+}
+
 .runningText img {
 	max-width: 100%;
 }

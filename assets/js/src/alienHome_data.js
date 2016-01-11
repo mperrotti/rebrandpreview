@@ -19,8 +19,7 @@ var views = new ViewManager(function(){
 
 	// ↓ ↓ ↓ ↓ Where we pick which data we want ↓ ↓ ↓ ↓
 	var shoppingList = [
-		{"gimme": "topic_categories", "key":"sugTopics", "data": {"zip": zip, "radius": 50}},
-		{"gimme": "recommended_topics", "key":"relatedTopics", "data": {"other_topics": topicID, "page": 10}}
+		{"gimme": "topic_categories", "key":"categories", "data": {"zip": zip, "radius": 50}}
 	];
 	// ↑ ↑ ↑ ↑ Where we pick which data we want ↑ ↑ ↑ ↑
 

@@ -23,7 +23,10 @@ router.add('', function(context){ // homepage
 	views.show({
 		template: 'main-template',
 		events: {
-			"renderNavigation": renderNavigation()
+			"renderNavigation"    : renderNavigation(),
+			"switchTab"           : switchTab,
+			"priorityPlus_toggle" : priorityPlus_toggle,
+			"showAllCategories"   : showAllCategories
 		},
 		observe: {
 		},

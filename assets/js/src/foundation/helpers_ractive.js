@@ -212,6 +212,55 @@ $.fn.tabs = function(){
 	});
 };
 
+//
+// PRIORITY PLUS PATTERN
+//
+function priorityPlusSetup() {
+
+	if ($('.priorityPlus').length) {
+		var $container        = $('.priorityPlus');
+		var $showAll          = $('.priorityPlus-showAll');
+		var $list             = $('.priorityPlus-list');
+		var priorityPlusWidth = 0;
+		$('.priorityPlus-list li').each(function(idx, el){
+			priorityPlusWidth += $(el).outerWidth(true);
+		});
+
+		function updateNav() {
+			var availableSpace = $showAll.hasClass('display--none') ? $container.width() : $container.width() - $showAll.width() - 30;
+
+			// console.log('priorityPlusWidth = ' + priorityPlusWidth);
+			// console.log('$container.width() = ' + $container.width());
+			// console.log('$list.width() = ' + $list.width());
+
+			// The visible list is overflowing the nav
+
+			if(priorityPlusWidth > availableSpace) {
+
+				// Show the dropdown btn
+				if($showAll.hasClass('display--none')) {
+					$showAll.removeClass('display--none');
+					$container.addClass('priorityPlus--overflowing');
+				}
+
+				// The visible list is not overflowing
+			} else {
+				$showAll.addClass('display--none');
+				$container.removeClass('priorityPlus--overflowing');
+			}
+
+		}
+
+		// Window listeners
+
+		$(window).resize(function() {
+			updateNav();
+		});
+
+		updateNav();
+	}
+
+}
 
 Ractive.transitions.scale = function ( t, params ) {
 
@@ -320,8 +369,9 @@ function defaultRenderCompleteActions($el){
 	$el = $el || $('body');
 	$el.find('.hscroll').hscroll();
 	//$el.find('.exactlist').exactlist();
-	$el.find('.tabs').tabs();
+	// $el.find('.tabs').tabs();
 	autosize($el.find('textarea'));
+	priorityPlusSetup();
 
 	// special platform emulation class magic
 	if(typeof platform !== 'undefined' && platform == 'ios'){

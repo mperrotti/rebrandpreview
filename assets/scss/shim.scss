@@ -1,24 +1,18 @@
 /*
-	Styles that live in Chapstick or somewhere outside of SQ2
+	Either:
+	-Styles that live in Chapstick or somewhere outside of SQ2
+	-Quick-and-dirty fixes
 */
 
 @import '../../bower_components/meetup-swatches/sass/colors';
 @import '../../bower_components/sassquatch2/sass/globals';
 @import '../../bower_components/sassquatch2/sass/util';
 
-.view-head {
-	position: fixed;
-}
-.view.off{
-	display: none;
-}
-@include atMediaUp(medium) {
-	.view--splitDetail{
-		.viewHead-back{
-			display: none;
-		}
-	}
-}
+/*
+**********************************************************
+Styles that live in Chapstick or somewhere outside of SQ2
+**********************************************************
+*/
 
 // MODAL VIEW FULL
 // full screen at all screen widths
@@ -124,4 +118,27 @@
 	img {
 		max-width: 100%;
 	}
+}
+
+/*
+**********************
+Quick-and-dirty fixes
+**********************
+*/
+.view-head {
+	position: fixed;
+}
+.view.off{
+	display: none;
+}
+@include atMediaUp(medium) {
+	.view--splitDetail{
+		.viewHead-back{
+			display: none;
+		}
+	}
+}
+
+.gridList > li.display--none {
+	display: none;
 }
