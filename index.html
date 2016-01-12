@@ -27,6 +27,9 @@
 
 <script type="text/template" id="main-template">
 	<div class="stripe stripe--photoHero" style="background-image: url('assets/img/heroPlaceholder2.jpg');">
+
+		<video class='videoFill display--none atMedium_display--block' autoplay="" loop='' name="media"><source src="assets/img/stockFootage.mp4" type="video/mp4"></video>
+
 		<div class="stripe-heroContent stripe-heroContent--full column">
 			<div class="bounds bounds--wide align--center column-item chunk margin--top inverted">
 				<h3 class="text--display">Meet your people.</h3>
@@ -34,7 +37,7 @@
 			</div>
 
 			<div class="photoOverlay column-item--shrink shaded">
-				<div class="bounds bounds--wide">
+				<div class="bounds">
 					<div class="spreadable atMedium_spreadable--spread">
 						<div class="spreadable-item chunk">
 							<label for="topic-search" class="visibility--a11yHide">Search for a topic</label>
@@ -141,9 +144,6 @@
 					<span class="row">
 						<span class="row-item">
 							<span class="display--block">125 Meetups this week</span><span class="text--small text--secondary">New York, NY</span>
-						</span>
-						<span class="row-item row-item--shrink valign--middle">
-							{{{helpers.svgIcon('arrowRight')}}}
 						</span>
 					</span>
 				</a>
