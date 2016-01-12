@@ -91,7 +91,6 @@ a {
 }
 
 /* _inlineblockList.scss */
-
 .inlineblockList--bulleted > li {
 
 	&:after {
@@ -148,14 +147,37 @@ $_hoverChange: 8%;
 
 /* same as in SQ2, but with rebrand colors */
 .button--bordered {
-	@include color-all( map-get($btn-color-map, "primary") );
+	@include color-all($C_link);
 	background: transparent !important;
 	border: $btn-border;
 	font-weight: $W_normal;
 	&:hover,
 	&:active,
 	&:focus {
-		background: transparentize(map-get($btn-color-map, "primary"), .8) !important;
+		background: transparentize($C_link, .8) !important;
+	}
+
+	.inverted & {
+		color: $C_textPrimaryInverted;
+		border-color: 1px solid $C_textPrimaryInverted;
+		&:hover,
+		&:active,
+		&:focus {
+			background: opacify($C_textPrimaryInverted, .8) !important;
+			color: $C_textPrimary;
+		}
+	}
+
+}
+
+.button--contrast {
+	background: $C_contentBG !important;
+	color: $C_textPrimary;
+	font-weight: $W_normal;
+	&:hover,
+	&:active,
+	&:focus {
+		background: transparentize($C_textPrimaryInverted, .2) !important;
 	}
 }
 
@@ -287,11 +309,55 @@ $_tabBorder: 4px; // no change, just needed the var
 	opacity: 1;
 }
 
+
 /*
 -----------------------------
-	ONE-OFF
+	PROTOTYPE ONE-OFF
 -----------------------------
 */
+
+// Nav
+.mainNav{
+	background: $C_contentBG;
+}
+
+.mainNav .button {
+	line-height: $line-height; // hacky way to avoid extra space below
+}
+
+.mainNav--sticky {
+	position: fixed;
+	width: 100%;
+	z-index: 999;
+}
+
+.mainNav--photoOverlay {
+	background: transparent;
+	.link {
+		color: $C_textPrimaryInverted;
+	}
+}
+
+.mainNav--photoOverlay {
+	background: -webkit-linear-gradient(transparentize($C_contentBGInverted, .2), transparentize($C_contentBGInverted, 1));
+	background: linear-gradient(transparentize($C_contentBGInverted, .2), transparentize($C_contentBGInverted, 1));
+}
+
+// Kill the view-head
+.view-head {
+	display: none !important;
+}
+
+// Full video bg
+// NOTE: need a x-browser solution
+.videoFill {
+  position:absolute;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+// "Download the app" buttons
 .appBadge {
 	background: black;
 	border-radius: 3px;

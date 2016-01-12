@@ -9,6 +9,27 @@ function renderNavigation() {
 			"loggedIn": false,
 			"isModern": false
 		});
+
+		// Change to sticky nav
+		setTimeout(function() { // using this to deal with weird Waypoints bug
+			$('.mainNav').waypoint({
+				handler: function(direction) {
+					if (direction == 'up') {
+						// over photo
+						$(this).addClass('mainNav--photoOverlay inverted');
+						$(this).find('.button--bordered').addClass('button--contrast').removeClass('button--bordered');
+					} else {
+						// over content
+						$(this).removeClass('mainNav--photoOverlay inverted');
+						$(this).find('.button--contrast').addClass('button--bordered').removeClass('button--contrast');
+					}
+				},
+				offset: function() {
+					return -1 * $('.stripe-heroContent').height();
+				}
+			});
+		}, 1);
+		$('.mainNav').addClass('mainNav--sticky mainNav--photoOverlay inverted');
 	}
 }
 
