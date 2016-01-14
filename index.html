@@ -13,6 +13,7 @@
 
 	<!-- Load Sassquatch2 -->
 	<link rel="stylesheet" href="assets/css/sq2.css" />
+	<link rel="stylesheet" href="assets/css/colorfilter.css" />
 
 	<!-- Page-specific styles -->
 	<link rel="stylesheet" href="assets/css/alienHome.css" />
@@ -26,14 +27,20 @@
 <body>
 
 <script type="text/template" id="main-template">
-	<div class="stripe stripe--photoHero" style="background-image: url('assets/img/heroPlaceholder2.jpg');">
+	<div class="stripe stripe--photoHero" style="background-image: url('assets/img/heroPlaceholder.png');">
 
-		<video class='videoFill display--none atMedium_display--block' autoplay="" loop='' name="media"><source src="assets/img/stockFootage.mp4" type="video/mp4"></video>
+		<video class='videoFill' autoplay loop name="media"><source src="assets/img/stockFootage.mp4" type="video/mp4"></video>
 
 		<div class="stripe-heroContent stripe-heroContent--full column">
 			<div class="bounds bounds--wide align--center column-item chunk margin--top inverted">
 				<h3 class="text--display">Meet your people.</h3>
-				<p>Local communities meeting up around shared interests</p>
+				<p class="chunk">Local communities meeting up around shared interests</p>
+				<!-- <div class="chunk">
+					<a href="#" class="button button--primary">Sign Up</a>
+				</div>
+				<div class="chunk">
+					<a href="#" class="link">Log In</a>
+				</div> -->
 			</div>
 
 			<div class="photoOverlay column-item--shrink shaded">
@@ -47,10 +54,10 @@
 						<div class="spreadable-item spreadable-item--shrink row chunk">
 							<div class="row-item">
 								<label for="city-search" class="visibility--a11yHide">Enter your city</label>
-								<input class="input--withIcon" id="city-search" type="text" placeholder="Enter your city" value="New York, NY" style="background-image:url('assets/img/magnifying-glass.svg')" />
+								<input class="input--withIcon input--withIcon--right" id="city-search" type="text" placeholder="Enter your city" value="New York, NY" style="background-image:url('assets/icons/svg/triangleDown.svg')" />
 							</div>
-							<div class="row-item row-item--shrink">
-								<button class="button button--primary">Search</button>
+							<div class="row-item row-item--shrink inverted">
+								<button class="button button--bordered">Search</button>
 							</div>
 						</div>
 
@@ -95,47 +102,55 @@
 		<div class="js-tabContent" id="thisWeek">
 			<ul class="gridList gridList--has1 atMedium_gridList--has2 atLarge_gridList--has4 chunk">
 				<li>
-					<a class="card card--group chunk inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://foundation.specialsnowflake.com/duotoneTester.php?url=http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg&colorDark=192550&colorLight=F00E2E);">
-						<h4 class="text--bold">New York Soccer Project's Pick-up</h4>
-						<p class="text--small">979 Members</p>
-						<span class="card--group-avatar avatar avatar--person" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">Member Name</span>
+					<a class="card card--group chunk inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(assets/img/placeholderMUG/1.png);">
+						<h4 class="text--bold">The Road Not Taken Hikes and Adventures</h4>
 					</a>
-					<p>Tuesday January 3 at 4:00pm</p>
-					<p class="chunk">Hosted by Sarah</p>
-					<p class="text--secondary text--small">Soccer, Casual, Brooklyn</p>
+					<p>Thursday, January 21 at 6:30pm</p>
+					<div class="row">
+						<div class="row-item row-item--shrink valign--middle">
+							<div class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg)">Member Name</div>
+						</div>
+						<div class="row-item valign--middle"><p>Hosted by Sarah</p></div>
+					</div>
 				</li>
 
 				<li>
-					<a class="card card--group chunk inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://foundation.specialsnowflake.com/duotoneTester.php?url=http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg&colorDark=081E72&colorLight=A2DFB3);">
-						<h4 class="text--bold">New York Soccer Project's Pick-up</h4>
-						<p class="text--small">979 Members</p>
-						<span class="card--group-avatar avatar avatar--person" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">Member Name</span>
+					<a class="card card--group chunk inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(assets/img/placeholderMUG/2.png);">
+						<h4 class="text--bold">Dashing Whippets</h4>
 					</a>
-					<p>Tuesday January 3 at 4:00pm</p>
-					<p class="chunk">Hosted by Sarah</p>
-					<p class="text--secondary text--small">Soccer, Casual, Brooklyn</p>
+					<p>Saturday, January 16 at 7:00pm</p>
+					<div class="row">
+						<div class="row-item row-item--shrink valign--middle">
+							<div class="avatar avatar--person avatar--small" style="background-image: url(https://s3.amazonaws.com/uifaces/faces/twitter/sauro/128.jpg)">Member Name</div>
+						</div>
+						<div class="row-item valign--middle"><p>Hosted by James</p></div>
+					</div>
 				</li>
 
 				<li>
-					<a class="card card--group chunk inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://foundation.specialsnowflake.com/duotoneTester.php?url=http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg&colorDark=081E72&colorLight=FFC600);">
-						<h4 class="text--bold">New York Soccer Project's Pick-up</h4>
-						<p class="text--small">979 Members</p>
-						<span class="card--group-avatar avatar avatar--person" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">Member Name</span>
+					<a class="card card--group chunk inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(assets/img/placeholderMUG/3.png);">
+						<h4 class="text--bold">NY JavaScript</h4>
 					</a>
-					<p>Tuesday January 3 at 4:00pm</p>
-					<p class="chunk">Hosted by Sarah</p>
-					<p class="text--secondary text--small">Soccer, Casual, Brooklyn</p>
+					<p>Tuesday, January 19 at 6:30pm</p>
+					<div class="row">
+						<div class="row-item row-item--shrink valign--middle">
+							<div class="avatar avatar--person avatar--small" style="background-image: url(https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg)">Member Name</div>
+						</div>
+						<div class="row-item valign--middle"><p>Hosted by Skyler</p></div>
+					</div>
 				</li>
 
 				<li>
-					<a class="card card--group chunk inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://foundation.specialsnowflake.com/duotoneTester.php?url=http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg&colorDark=650000&colorLight=73C1FF);">
+					<a class="card card--group chunk inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(assets/img/placeholderMUG/4.png);">
 						<h4 class="text--bold">New York Soccer Project's Pick-up</h4>
-						<p class="text--small">979 Members</p>
-						<span class="card--group-avatar avatar avatar--person" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">Member Name</span>
 					</a>
-					<p>Tuesday January 3 at 4:00pm</p>
-					<p class="chunk">Hosted by Sarah</p>
-					<p class="text--secondary text--small">Soccer, Casual, Brooklyn</p>
+					<p>Tuesday, January 19 at 9:30am</p>
+					<div class="row">
+						<div class="row-item row-item--shrink valign--middle">
+							<div class="avatar avatar--person avatar--small" style="background-image: url(https://s3.amazonaws.com/uifaces/faces/twitter/do_fox/128.jpg)">Member Name</div>
+						</div>
+						<div class="row-item valign--middle"><p>Hosted by Nick</p></div>
+					</div>
 				</li>
 			</ul>
 
@@ -156,45 +171,53 @@
 				<li>
 					<a class="card card--group chunk inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://foundation.specialsnowflake.com/duotoneTester.php?url=http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg&colorDark=192550&colorLight=F00E2E);">
 						<h4 class="text--bold">New York Soccer Project's Pick-up</h4>
-						<p class="text--small">979 Members</p>
-						<span class="card--group-avatar avatar avatar--person" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">Member Name</span>
 					</a>
 					<p>Tuesday January 3 at 4:00pm</p>
-					<p class="chunk">Hosted by Sarah</p>
-					<p class="text--secondary text--small">Soccer, Casual, Brooklyn</p>
+					<div class="row">
+						<div class="row-item row-item--shrink valign--middle">
+							<div class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg)">Member Name</div>
+						</div>
+						<div class="row-item valign--middle"><p>Hosted by Sarah</p></div>
+					</div>
 				</li>
 
 				<li>
 					<a class="card card--group chunk inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://foundation.specialsnowflake.com/duotoneTester.php?url=http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg&colorDark=192550&colorLight=F00E2E);">
 						<h4 class="text--bold">New York Soccer Project's Pick-up</h4>
-						<p class="text--small">979 Members</p>
-						<span class="card--group-avatar avatar avatar--person" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">Member Name</span>
 					</a>
 					<p>Tuesday January 3 at 4:00pm</p>
-					<p class="chunk">Hosted by Sarah</p>
-					<p class="text--secondary text--small">Soccer, Casual, Brooklyn</p>
+					<div class="row">
+						<div class="row-item row-item--shrink valign--middle">
+							<div class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg)">Member Name</div>
+						</div>
+						<div class="row-item valign--middle"><p>Hosted by Sarah</p></div>
+					</div>
 				</li>
 
 				<li>
 					<a class="card card--group chunk inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://foundation.specialsnowflake.com/duotoneTester.php?url=http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg&colorDark=192550&colorLight=F00E2E);">
 						<h4 class="text--bold">New York Soccer Project's Pick-up</h4>
-						<p class="text--small">979 Members</p>
-						<span class="card--group-avatar avatar avatar--person" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">Member Name</span>
 					</a>
 					<p>Tuesday January 3 at 4:00pm</p>
-					<p class="chunk">Hosted by Sarah</p>
-					<p class="text--secondary text--small">Soccer, Casual, Brooklyn</p>
+					<div class="row">
+						<div class="row-item row-item--shrink valign--middle">
+							<div class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg)">Member Name</div>
+						</div>
+						<div class="row-item valign--middle"><p>Hosted by Sarah</p></div>
+					</div>
 				</li>
 
 				<li>
 					<a class="card card--group chunk inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://foundation.specialsnowflake.com/duotoneTester.php?url=http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg&colorDark=192550&colorLight=F00E2E);">
 						<h4 class="text--bold">New York Soccer Project's Pick-up</h4>
-						<p class="text--small">979 Members</p>
-						<span class="card--group-avatar avatar avatar--person" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">Member Name</span>
 					</a>
 					<p>Tuesday January 3 at 4:00pm</p>
-					<p class="chunk">Hosted by Sarah</p>
-					<p class="text--secondary text--small">Soccer, Casual, Brooklyn</p>
+					<div class="row">
+						<div class="row-item row-item--shrink valign--middle">
+							<div class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg)">Member Name</div>
+						</div>
+						<div class="row-item valign--middle"><p>Hosted by Sarah</p></div>
+					</div>
 				</li>
 			</ul>
 
@@ -218,7 +241,7 @@
 				<a href="#">
 					<img src="./assets/img/categories/{{shortname}}.jpg" alt="{{name}}" class="span--100">
 					<p class="text--bold">{{name}}</p>
-					<span class="attachment">
+					<span class="attachment display--none atMedium_display--inline">
 						<ul class="inlineblockList inlineblockList--bulleted text--small text--secondary">
 							{{#each best_topics:i}}
 								{{#if i < 3}}
@@ -243,7 +266,7 @@
 				<div class="column">
 					<h4 class="column-item column-item--shrink text--bold">Had we not met...</h4>
 					<p class="column-item chunk">Meetup was born after our founder Scott found that he didn’t know his neighbors after 9/11. He realized the importance of creating real lasting community and that we haven’t yet all the people that will be important in our lives.</p>
-					<div class="column-item column-item--shrink"><a href="#" class="link">{{{helpers.svgIcon('play', 'valign--middle margin--right')}}}<span>Watch our origin story</span></a></div>
+					<div class="column-item column-item--shrink attachment"><a href="#" class="link row">{{{helpers.svgIcon('play', 'valign--middle row-item row-item--shrink')}}}<span class="row-item">Watch our origin story</span></a></div>
 				</div>
 			</li>
 
@@ -251,7 +274,7 @@
 				<div class="column">
 					<h4 class="column-item column-item--shrink text--bold">The New Meetup</h4>
 					<p class="column-item chunk">We have a brand new look! Also, we’re reimagining our apps and website starting with mobile. Our biggest focus in the redesign was surfacing things that people never knew they were interested in, and helping people uncover the best version of themselves</p>
-					<div class="column-item column-item--shrink"><a href="#" class="link">{{{helpers.svgIcon('play', 'valign--middle margin--right')}}}<span>Read about the redesign</span></a></div>
+					<div class="column-item column-item--shrink attachment"><a href="#" class="link row">{{{helpers.svgIcon('textBlock', 'valign--middle row-item row-item--shrink')}}}<span class="row-item">Read about the redesign</span></a></div>
 				</div>
 			</li>
 
@@ -259,7 +282,7 @@
 				<div class="column">
 					<h4 class="column-item column-item--shrink text--bold">How does Meetup work?</h4>
 					<p class="column-item chunk">Local communities are started by passionate leaders who see the value of face-to-face community. Start a brand new meetup in your city or look to other cities to start a local version of a bigger movement. Check out our inspiring organizer stories.</p>
-					<div class="column-item column-item--shrink"><a href="#" class="link">{{{helpers.svgIcon('play', 'valign--middle margin--right')}}}<span>Watch organizer stories</span></a></div>
+					<div class="column-item column-item--shrink attachment"><a href="#" class="link row">{{{helpers.svgIcon('play', 'valign--middle row-item row-item--shrink')}}}<span class="row-item">Watch organizer stories</span></a></div>
 				</div>
 			</li>
 		</ul>
@@ -268,7 +291,7 @@
 	<div class="stripe stripe--noBorder"><div class="bounds bounds--wide">
 		<div class="well spreadable atMedium_spreadable--spread spreadable--center align--center padding--top">
 			<p class="spreadable-item spreadable-item--shrink text--bold valign--middle chunk">Find out what Meetups your friends are going to</p>
-			<div class="spreadable-item spreadable-item--shrink valign--middle chunk"><a href="#" class="button">{{{helpers.svgIcon('facebook', 'valign--middle')}}}<span class="valign--middle margin--left">Sign up with Facebook</span></a></div>
+			<div class="spreadable-item spreadable-item--shrink valign--middle chunk"><a href="#" class="button button--facebook">{{{helpers.svgIcon('facebook', 'valign--middle')}}}<span class="valign--middle margin--left">Sign up with Facebook</span></a></div>
 		</div>
 	</div></div>
 
@@ -290,25 +313,27 @@
 	</div></div>
 
 	<footer class="stripe stripe--inverted inverted">
-		<div class="bounds">
+		<div class="bounds align--center">
 
-			<div class="spreadable atMedium_spreadable--spread">
+			<!--<div class="spreadable atMedium_spreadable--spread">
 				<div class="spreadable-item chunk">
 					<a href="#" class="text--bold">Start a Meetup Group</a>
 				</div>
 				<div class="spreadable-item spreadable-item--shrink chunk">
 					<a href="#" >Log out</a>
 				</div>
-			</div>
+			</div>-->
 
-			<ul class="inlineblockList chunk bordered">
-				<li class="chunk"><a href="#">Help</a></li>
-				<li class="chunk"><a href="#">About Us</a></li>
-				<li class="chunk"><a href="#">Jobs</a></li>
-				<li class="chunk"><a href="#">Blog</a></li>
-				<li class="chunk"><a href="#">Tech Blog</a></li>
-				<li class="chunk"><a href="#">API</a></li>
-				<li class="chunk"><a href="#">Made in NYC</a></li>
+			{{{helpers.svgIcon('logoScript', 'footerScript chunk')}}}
+
+			<ul class="inlineblockList inlineblockList--bulleted bordered chunk">
+				<li><a href="#">Help</a></li>
+				<li><a href="#">About Us</a></li>
+				<li><a href="#">Jobs</a></li>
+				<li><a href="#">Blog</a></li>
+				<li><a href="#">Tech Blog</a></li>
+				<li><a href="#">API</a></li>
+				<li><a href="#">Made in NYC</a></li>
 			</ul>
 
 			<ul class="inlineblockList text--small">
