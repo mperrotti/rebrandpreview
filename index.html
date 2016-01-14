@@ -94,7 +94,7 @@
 		<!-- HAPPENING THIS WEEK -->
 		<div class="js-tabContent" id="thisWeek">
 			<ul class="gridList gridList--has1 atMedium_gridList--has2 atLarge_gridList--has4 chunk">
-				<li>
+				<li class="gridList-item">
 					<a class="card card--group chunk inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://foundation.specialsnowflake.com/duotoneTester.php?url=http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg&colorDark=192550&colorLight=F00E2E);">
 						<h4 class="text--bold">New York Soccer Project's Pick-up</h4>
 						<p class="text--small">979 Members</p>
@@ -105,7 +105,7 @@
 					<p class="text--secondary text--small">Soccer, Casual, Brooklyn</p>
 				</li>
 
-				<li>
+				<li class="gridList-item">
 					<a class="card card--group chunk inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://foundation.specialsnowflake.com/duotoneTester.php?url=http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg&colorDark=081E72&colorLight=A2DFB3);">
 						<h4 class="text--bold">New York Soccer Project's Pick-up</h4>
 						<p class="text--small">979 Members</p>
@@ -116,7 +116,7 @@
 					<p class="text--secondary text--small">Soccer, Casual, Brooklyn</p>
 				</li>
 
-				<li>
+				<li class="gridList-item">
 					<a class="card card--group chunk inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://foundation.specialsnowflake.com/duotoneTester.php?url=http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg&colorDark=081E72&colorLight=FFC600);">
 						<h4 class="text--bold">New York Soccer Project's Pick-up</h4>
 						<p class="text--small">979 Members</p>
@@ -127,7 +127,7 @@
 					<p class="text--secondary text--small">Soccer, Casual, Brooklyn</p>
 				</li>
 
-				<li>
+				<li class="gridList-item">
 					<a class="card card--group chunk inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://foundation.specialsnowflake.com/duotoneTester.php?url=http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg&colorDark=650000&colorLight=73C1FF);">
 						<h4 class="text--bold">New York Soccer Project's Pick-up</h4>
 						<p class="text--small">979 Members</p>
@@ -153,7 +153,7 @@
 		<!-- MOST POPULAR -->
 		<div class="js-tabContent display--none" id="mostPopular">
 			<ul class="gridList gridList--has1 atMedium_gridList--has2 atLarge_gridList--has4 chunk">
-				<li>
+				<li class="gridList-item">
 					<a class="card card--group chunk inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://foundation.specialsnowflake.com/duotoneTester.php?url=http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg&colorDark=192550&colorLight=F00E2E);">
 						<h4 class="text--bold">New York Soccer Project's Pick-up</h4>
 						<p class="text--small">979 Members</p>
@@ -164,7 +164,7 @@
 					<p class="text--secondary text--small">Soccer, Casual, Brooklyn</p>
 				</li>
 
-				<li>
+				<li class="gridList-item">
 					<a class="card card--group chunk inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://foundation.specialsnowflake.com/duotoneTester.php?url=http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg&colorDark=192550&colorLight=F00E2E);">
 						<h4 class="text--bold">New York Soccer Project's Pick-up</h4>
 						<p class="text--small">979 Members</p>
@@ -175,7 +175,7 @@
 					<p class="text--secondary text--small">Soccer, Casual, Brooklyn</p>
 				</li>
 
-				<li>
+				<li class="gridList-item">
 					<a class="card card--group chunk inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://foundation.specialsnowflake.com/duotoneTester.php?url=http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg&colorDark=192550&colorLight=F00E2E);">
 						<h4 class="text--bold">New York Soccer Project's Pick-up</h4>
 						<p class="text--small">979 Members</p>
@@ -186,7 +186,7 @@
 					<p class="text--secondary text--small">Soccer, Casual, Brooklyn</p>
 				</li>
 
-				<li>
+				<li class="gridList-item">
 					<a class="card card--group chunk inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://foundation.specialsnowflake.com/duotoneTester.php?url=http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg&colorDark=192550&colorLight=F00E2E);">
 						<h4 class="text--bold">New York Soccer Project's Pick-up</h4>
 						<p class="text--small">979 Members</p>
@@ -214,7 +214,7 @@
 		<h3 class="text--headline align--center chunk">Explore new worlds</h3>
 		<ul class="gridList gridList--has2 atLarge_gridList--has4 chunk">
 		{{#each categories:i}}
-			<li {{#if i > 11}}class="display--none atLarge_display--inlineBlock"{{/if}}>
+			<li class="gridList-item {{#if i > 11}}display--none atLarge_display--inlineBlock{{/if}}">
 				<a href="#">
 					<img src="./assets/img/categories/{{shortname}}.jpg" alt="{{name}}" class="span--100">
 					<p class="text--bold">{{name}}</p>
@@ -239,7 +239,7 @@
 			<h3 class="text--secondary">About us</h3>
 		</div>
 		<ul class="gridList gridList--has1 atMedium_gridList--has3">
-			<li>
+			<li class="gridList-item">
 				<div class="column">
 					<h4 class="column-item column-item--shrink text--bold">Had we not met...</h4>
 					<p class="column-item chunk">Meetup was born after our founder Scott found that he didn’t know his neighbors after 9/11. He realized the importance of creating real lasting community and that we haven’t yet all the people that will be important in our lives.</p>
@@ -247,7 +247,7 @@
 				</div>
 			</li>
 
-			<li>
+			<li class="gridList-item">
 				<div class="column">
 					<h4 class="column-item column-item--shrink text--bold">The New Meetup</h4>
 					<p class="column-item chunk">We have a brand new look! Also, we’re reimagining our apps and website starting with mobile. Our biggest focus in the redesign was surfacing things that people never knew they were interested in, and helping people uncover the best version of themselves</p>
@@ -255,7 +255,7 @@
 				</div>
 			</li>
 
-			<li>
+			<li class="gridList-item">
 				<div class="column">
 					<h4 class="column-item column-item--shrink text--bold">How does Meetup work?</h4>
 					<p class="column-item chunk">Local communities are started by passionate leaders who see the value of face-to-face community. Start a brand new meetup in your city or look to other cities to start a local version of a bigger movement. Check out our inspiring organizer stories.</p>
