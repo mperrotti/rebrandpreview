@@ -125,10 +125,11 @@ $_hoverChange: 8%;
 
 .button {
 	background: $C_accentDark;
-	color: $C_textPrimaryInverted;
-	padding: $space-half $space;
-	min-height: ($font-size * $line-height) + $space;
 	box-shadow: none !important;
+	color: $C_textPrimaryInverted;
+	line-height: $line-height; // temporary hacky fix for weird button text alignment
+	min-height: ($font-size * $line-height) + $space;
+	padding: $space-half $space;
 
 	use {
 		fill: $C_textPrimaryInverted;
@@ -181,20 +182,21 @@ $_hoverChange: 8%;
 	}
 }
 
-/* _card.scss */
-.card--group {
-	font-size: $font-size; // killing @include valignChildren(bottom);
-	line-height: $line-height; // killing @include valignChildren(bottom);
-	display: block; // killing @include valignChildren(bottom);
-	&:before { display: none; } // killing @include textProtectionScrim();
+.button--facebook {
+	background: $C_facebook;
 }
 
-.card--group-avatar {
-	box-shadow: 1px 1px 3px rgba(0,0,0,.26); // TODO: record this as a global
-	border: 1px solid $C_contentBG;
-	bottom: -#{$space-half};
-	position: absolute;
-	right: #{$space-half};
+/* _card.scss */
+.card--group {
+	border-top: none;
+	display: block; // killing @include valignChildren(bottom);
+	line-height: $line-height; // killing @include valignChildren(bottom);
+	&:before { display: none; } // killing @include textProtectionScrim();
+
+	h4 {
+		font-size: $font-size; // killing text--small in cards
+	}
+
 }
 
 /* NEW: _priorityPlus.scss */
@@ -316,31 +318,11 @@ $_tabBorder: 4px; // no change, just needed the var
 -----------------------------
 */
 
-// Nav
-.mainNav{
-	background: $C_contentBG;
-}
-
-.mainNav .button {
-	line-height: $line-height; // hacky way to avoid extra space below
-}
-
-.mainNav--sticky {
-	position: fixed;
-	width: 100%;
-	z-index: 999;
-}
-
-.mainNav--photoOverlay {
-	background: transparent;
-	.link {
-		color: $C_textPrimaryInverted;
-	}
-}
-
-.mainNav--photoOverlay {
-	background: -webkit-linear-gradient(transparentize($C_contentBGInverted, .2), transparentize($C_contentBGInverted, 1));
-	background: linear-gradient(transparentize($C_contentBGInverted, .2), transparentize($C_contentBGInverted, 1));
+// Ideally, I'd be able to just be
+// able to set this with `media--xl`
+.footerScript {
+	height: $media-m;
+	width: auto;
 }
 
 // Kill the view-head
