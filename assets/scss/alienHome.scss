@@ -349,3 +349,25 @@ $_tabBorder: 4px; // no change, just needed the var
 		width: auto;
 	}
 }
+
+// ONLY FOR THE BOARD DEMO. KILL THIS STYLE WITH FILE
+.ghettoScrim {
+	min-height: 70vh;
+
+	@include atMediaUp(medium) {
+		min-height: 384px;
+		.stripe-heroContent {
+			min-height: 0;
+		}
+	}
+
+	&:before {
+		background-color: transparentize($C_black, .8);
+		z-index: 1;
+    background-blend-mode: screen;
+	}
+
+	.stripe-heroContent {
+		z-index: 1;
+	}
+}
