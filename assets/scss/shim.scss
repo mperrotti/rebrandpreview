@@ -72,10 +72,10 @@ Styles that live in Chapstick or somewhere outside of SQ2
   }
 
   &.top-left{
-      margin-left: -($pointer_size);
+      margin-left: -12px;
   }
   &.top-right{
-      margin-left: $pointer_size;
+      margin-left: 12px;
   }
 
   .momentary-btn-list {

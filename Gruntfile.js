@@ -104,12 +104,9 @@ module.exports = function(grunt) {
 		},
 
 		'wiredep': {
-			options: {
-				cwd: 'bower_components/sassqutch2',
-				directory: 'bower_components/'
-			},
-			// wires this file (updates import statements using the above info)
-			src: [ 'bower_components/sassqutch2/sass/_util.scss' ]
+			sass: {
+				src: [ 'bower_components/sassquatch2/sass/_util.scss' ]
+			}
 		},
 
 		'watch': {
@@ -144,6 +141,6 @@ module.exports = function(grunt) {
 	});
 	grunt.registerTask('default', ['watch']);
 	grunt.registerTask('icons', ['svgstore:icons', 'svginjector:icons']);
-	grunt.registerTask('build', ['clean', 'wiredep', 'uglify', 'sass']);
+	grunt.registerTask('build', ['clean', 'uglify', 'sass']);
 	grunt.registerTask('serve', ['build', 'exec']);
 };
