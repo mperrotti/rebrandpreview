@@ -74,11 +74,6 @@ a {
 	padding-top: $space-double;
 }
 
-/* NEW: _photoOverlay.scss */
-.photoOverlay {
-	background-color: $C_photoOverlay;
-}
-
 /* _gridList.scss */
 .gridList {
 	> li {
@@ -124,7 +119,7 @@ a {
 $_hoverChange: 8%;
 
 .button {
-	background: $C_accentDark;
+	background: $C_accent;
 	box-shadow: none !important;
 	color: $C_textPrimaryInverted;
 	line-height: $line-height; // temporary hacky fix for weird button text alignment
@@ -136,7 +131,7 @@ $_hoverChange: 8%;
 	}
 
 	&:hover {
-		background: lighten($C_accentDark, $_hoverChange) !important;
+		background: lighten($C_accent, $_hoverChange) !important;
 	}
 }
 .button--primary {
@@ -220,7 +215,7 @@ $_hoverChange: 8%;
 	z-index: 1;
 
 	.stripe--collection & {
-		box-shadow: -#{$space-half} 0 $space $C_collectionBGLight;
+		box-shadow: -#{$space-half} 0 $space $C_collectionBG;
 	}
 
 	.inverted & {
@@ -251,8 +246,8 @@ $_hoverChange: 8%;
 /* _tabs.scss */
 $_tabBorder: 4px; // no change, just needed the var
 .tabs-tab--selected {
-	color: $C_accentDark;
-	border-bottom: $_tabBorder solid $C_accentDark;
+	color: $C_accent;
+	border-bottom: $_tabBorder solid $C_accent;
 }
 
 .tabs--vert {
@@ -263,7 +258,7 @@ $_tabBorder: 4px; // no change, just needed the var
 		margin-left: 0;
 	}
 	.tabs-tab--selected {
-		border-left: $_tabBorder solid $C_accentDark;
+		border-left: $_tabBorder solid $C_accent;
 		border-bottom: 1px solid $C_border;
 		padding: $space-half;
 	}
@@ -272,7 +267,7 @@ $_tabBorder: 4px; // no change, just needed the var
 /* NEW: _well.scss */
 /* Mike P: I don't think this should be it's own 'ui component'. Where does it belong? */
 .well {
-	background: $C_collectionBGLight;
+	background: $C_collectionBG;
 }
 
 /*
