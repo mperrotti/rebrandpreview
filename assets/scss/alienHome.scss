@@ -69,9 +69,23 @@ a {
 	background-color: $C_contentBGInverted; // no change, just different color
 }
 
-.stripe--noBorder {
+.stripe--noBorder { // new variant
 	border-top: none;
 	padding-top: $space-double;
+}
+
+// fixes to stripe-overlap
+.stripe--overlap {
+	position: relative;
+	.bounds {
+		position: relative;
+	}
+}
+.stripe--overlap:not(.stripe--hero),
+.stripe--overlap:not(.stripe--photoHero) {
+	&:before {
+		border-top: 1px solid $C_border;
+	}
 }
 
 /* _gridList.scss */
@@ -109,6 +123,10 @@ a {
 	}
 }
 
+.hscroll-content > li {
+	white-space: normal;
+}
+
 /*
 -----------------------------
 	UI COMPONENTS
@@ -123,7 +141,7 @@ $_hoverChange: 8%;
 	box-shadow: none !important;
 	color: $C_textPrimaryInverted;
 	line-height: $line-height; // temporary hacky fix for weird button text alignment
-	min-height: ($font-size * $line-height) + $space;
+	//min-height: ($font-size * $line-height) + $space;
 	padding: $space-half $space;
 
 	use {
@@ -134,12 +152,17 @@ $_hoverChange: 8%;
 		background: lighten($C_accent, $_hoverChange) !important;
 	}
 }
+
 .button--primary {
 	background: $C_accent !important;
 	&:hover {
 		background: darken($C_accent, $_hoverChange) !important;
 	}
 }
+
+// .button--small { //
+// 	min-height: 0;
+// }
 
 /* same as in SQ2, but with rebrand colors */
 .button--bordered {
