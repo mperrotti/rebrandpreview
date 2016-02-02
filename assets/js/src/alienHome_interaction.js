@@ -94,13 +94,38 @@ function priorityPlus_toggle(event) {
 	}
 }
 
-function showAllCategories(event) {
-	var categoryItems = event.node.previousElementSibling.childNodes;
+// function updateSlide(event) {
+// 	event.original.preventDefault();
+// 	var index = event.node.hash.substr(1),
+// 			$storiesGallery = $('.js-storiesCarousel').flickity();
 
-	$(event.node).removeClass('display--block');
-	$(event.node).addClass('display--none');
+// 	console.log(index);
 
-	for (var i = 0; i < categoryItems.length; i++) {
-		$(categoryItems[i]).removeClass('display--none');
-	}
+// 	$storiesGallery.flickity( 'select', index );
+// }
+
+function main_onComplete() {
+	// Initialize app carousel
+	var $storiesGallery = $('.js-storiesCarousel').flickity({
+		prevNextButtons: false,
+		pageDots: false,
+		cellSelector: '.stories-cell'
+	});
+
+	// we can use this to randomize selected cell
+	// $storiesGallery.flickity('select', 1);
+
+	$('.js-storiesNav').on( 'click', 'a', function(event) {
+		event.preventDefault();
+		var index = $(this).parent().index();
+		$storiesGallery.flickity('select', index, false, true);
+	});
+
+	// Initialize app carousel
+	$('.js-appCarousel').flickity({
+		// options
+		cellAlign: 'left',
+		contain: true,
+		imagesLoaded: true
+	});
 }

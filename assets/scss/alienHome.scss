@@ -70,7 +70,7 @@ a {
 }
 
 .stripe--noBorder { // new variant
-	border-top: none;
+	border-width: 0px !important;
 	padding-top: $space-double;
 }
 
@@ -336,8 +336,38 @@ $_tabBorder: 4px; // no change, just needed the var
 -----------------------------
 */
 
+// App carousel styles
+.cell-content {
+	max-width: 40em;
+}
+
+// Story carousel
+.stories-cell {
+	width: 100%;
+}
+
+.storiesNavContainer {
+	@include atMediaUp(large) {
+		position: absolute;
+		right: 0;
+		z-index: 999;
+		padding: $space;
+		margin: $space 0;
+		height: 100%;
+		box-sizing: border-box;
+	}
+}
+
+.storiesNav {
+	@include atMediaUp(large) {
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+
 // Ideally, I'd be able to just be
-// able to set this with `media--xl`
+// able to set this with `media--m`
 .footerScript {
 	height: $media-m;
 	width: auto;
