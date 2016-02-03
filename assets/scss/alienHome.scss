@@ -366,40 +366,11 @@ $_tabBorder: 4px; // no change, just needed the var
 .appBadge {
 	background: black;
 	border-radius: 3px;
-	@include atMediaUp(medium) {
-		margin-right: $space-half;
-	}
-	img {
-		@include atMediaUp(medium) {
-			height: $media-s;
-		}
-	}
+	margin-right: $space-half;
 }
 
-//
-// Layout for app download CTAs
-//
-.getAppCell {
-	border-width: 0;
-	padding: 0;
-	line-height: 1;
-	@include atMediaUp(medium) {
-		padding: $space;
-	}
-}
-
-.getAppCell--text {
-	display: none;
-	@include atMediaUp(medium) {
-		display: flex;
-	}
-}
-
-.getAppCell--store {
-	border-left: none;
-	@include atMediaUp(medium) {
-		border-left: 1px solid $C_border;
-	}
+.stripe--accent {
+	background-color: $C_accent;
 }
 
 // ONLY FOR THE BOARD DEMO. KILL THIS STYLE WITH FILE
