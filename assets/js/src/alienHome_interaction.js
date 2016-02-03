@@ -94,32 +94,14 @@ function priorityPlus_toggle(event) {
 	}
 }
 
-// function updateSlide(event) {
-// 	event.original.preventDefault();
-// 	var index = event.node.hash.substr(1),
-// 			$storiesGallery = $('.js-storiesCarousel').flickity();
-
-// 	console.log(index);
-
-// 	$storiesGallery.flickity( 'select', index );
-// }
-
 function main_onComplete() {
 	// Initialize app carousel
 	var $storiesGallery = $('.js-storiesCarousel').flickity({
-		prevNextButtons: false,
-		pageDots: false,
-		cellSelector: '.stories-cell'
+		pageDots: false
 	});
 
 	// we can use this to randomize selected cell
 	// $storiesGallery.flickity('select', 1);
-
-	$('.js-storiesNav').on( 'click', 'a', function(event) {
-		event.preventDefault();
-		var index = $(this).parent().index();
-		$storiesGallery.flickity('select', index, false, true);
-	});
 
 	// Initialize app carousel
 	$('.js-appCarousel').flickity({

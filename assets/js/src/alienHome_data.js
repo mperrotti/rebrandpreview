@@ -86,6 +86,8 @@ var views = new ViewManager(function(){
 
 		$.extend(views.data, data);
 
+		console.log(views.data);
+
 		// Now that the data is all ready, go ahead and start the router
 		window.addEventListener('hashchange', processHash);
 		processHash();
