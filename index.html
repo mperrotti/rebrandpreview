@@ -65,17 +65,21 @@
 		</ul>
 	</div></section>
 
-	<section class="stripe stripe--noBorder"><div class="bounds bounds--wide">
+	<section class="stripe stripe--noBorder"><div class="bounds">
 		<div class="spreadable atMedium_spreadable--spread chunk align--center atMedium_align--left">
-			<div class="spreadable-item spreadable-item--shrink">
-				<img src="assets/img/logoSwarm.svg" alt="Meetup logo" class="media--xl margin--center">
+			<div class="spreadable-item spreadable-item--shrink logo-container">
+				<img src="assets/img/logoSwarm.svg" alt="Meetup logo" class="media--xl display--inlineBlock">
 			</div>
 			<div class="spreadable-item">
-				<h2 class="text--display">Collectively, connceted humans will be capable of things we cannot imagine right now.</h2>
-				<p>—Kevin Kelly</p>
+				<div class="chunk">
+					<h2 class="text--headline">Collectively, connceted humans will be capable of things we cannot imagine right now.</h2>
+					<p>—Kevin Kelly</p>
+				</div>
+				<div class="chunk">
+					<a href="#blogpost" class="link"><span class="valign--middle">Read about the rebrand</span> {{{helpers.svgIcon('arrowRight', 'valign--middle')}}}</a>
+				</div>
 			</div>
 		</div>
-		<div class="bordered align--right"><a href="#blogpost" class="link"><span class="valign--middle">Read about the rebrand</span> {{{helpers.svgIcon('arrowRight', 'valign--middle')}}}</a></div>
 	</div></section>
 
 	<section class="stripe stripe--noBorder"><div class="bounds bounds--wide">
@@ -96,6 +100,11 @@
 		</ul>
 	</div></section>
 
+	<!--
+	=================================
+	APP INFO
+	=================================
+	-->
 	<section class="stripe"><div class="bounds bounds--wide">
 		<div class="spreadable atMedium_spreadable--spread chunk">
 			<h3 class="text--headline chunk align--center display--block atMedium_display--none">Preview the new Meetup with our app</h3>
@@ -158,35 +167,36 @@
 	STORIES
 	=================================
 	-->
-	<div class="js-storiesCarousel stories inverted">
-		<div class="stories-cell span--100 stripe stripe--photoHero" style="background-image: url(./assets/img/users/barberguy.jpg);">
-			<div class="bounds bounds--wide stripe-heroContent align--left flush--top">
-				<div class="story-content runningText chunk">
-					<h3 class="text--headline">Ben</h3>
-					<p class="chunk">Member of the Sacremento Tech Meeetup</p>
-					<p>Brief story overview goes here. Donec facilisis tortor ut augue lacinia, at viverra est semper. Sed sapien metus, scelerisque nec pharetra id, tempor a tortor. Pellentesque non dignissim neque. Ut porta viverra est, ut dignissim elit elementum ut. Nunc vel rhoncus nibh, ut tincidunt turpis. Integer ac enim pellentesque, adipiscing metus id.</p>
+	<section class="stripe padding--top padding--bottom storiesCarousel">
+		<h3 class="text--headline paddingLeft--storiesCarousel storiesCarousel-headline">
+			<a href="#" class="link text--unbold" on-click="changeVerb">Learn to code</a>
+			<span class="display--block">with people</span>
+		</h3>
+		<div class="js-storiesCarousel">
+			<div class="spreadable atMedium_spreadable--spread span--100">
+				<div class="spreadable-item valign--middle">
+					<div class="runningText paddingLeft--storiesCarousel chunk">
+						<p>Brief story overview goes here. Donec facilisis tortor ut augue lacinia, at viverra est semper. Sed sapien metus, scelerisque nec pharetra id, tempor a tortor. Pellentesque non dignissim neque. Ut porta viverra est, ut dignissim elit elementum ut. Nunc vel rhoncus nibh, ut tincidunt turpis. Integer ac enim pellentesque, adipiscing metus id.</p>
+					</div>
+				</div>
+				<div class="spreadable-item valign--middle">
+					<img src="assets/img/users/coffeegirl_full.jpg" alt="" class="span--100">
+					<p class="text--caption">Sally, organizer of <a href="#" class="link text--bold">Iowa City Ladies Who JS</a></p>
+				</div>
+			</div>
+			<div class="spreadable atMedium_spreadable--spread span--100">
+				<div class="spreadable-item valign--middle">
+					<div class="runningText paddingLeft--storiesCarousel chunk">
+						<p>Brief story overview goes here. Donec facilisis tortor ut augue lacinia, at viverra est semper. Sed sapien metus, scelerisque nec pharetra id, tempor a tortor. Pellentesque non dignissim neque. Ut porta viverra est, ut dignissim elit elementum ut. Nunc vel rhoncus nibh, ut tincidunt turpis. Integer ac enim pellentesque, adipiscing metus id.</p>
+					</div>
+				</div>
+				<div class="spreadable-item valign--middle">
+					<img src="assets/img/users/barberguy.jpg" alt="" class="span--100">
+					<p class="text--caption">Ben, organizer of <a href="#" class="link text--bold">Manitoba Tech Meetup</a></p>
 				</div>
 			</div>
 		</div>
-		<div class="stories-cell span--100 stripe stripe--photoHero" style="background-image: url(./assets/img/users/coffeegirl.jpg);">
-			<div class="bounds bounds--wide stripe-heroContent align--left flush--top">
-				<div class="story-content runningText chunk">
-					<h3 class="text--headline">Sally</h3>
-					<p class="chunk">Organizer of the Coffee and Cats Meetup</p>
-					<p>Brief story overview goes here. Donec facilisis tortor ut augue lacinia, at viverra est semper. Sed sapien metus, scelerisque nec pharetra id, tempor a tortor. Pellentesque non dignissim neque. Ut porta viverra est, ut dignissim elit elementum ut. Nunc vel rhoncus nibh, ut tincidunt turpis. Integer ac enim pellentesque, adipiscing metus id.</p>
-				</div>
-			</div>
-		</div>
-		<div class="stories-cell span--100 stripe stripe--photoHero" style="background-image: url(./assets/img/users/fashiongirl.jpg);">
-			<div class="bounds bounds--wide stripe-heroContent align--left flush--top">
-				<div class="story-content runningText chunk">
-					<h3 class="text--headline">Sam</h3>
-					<p class="chunk">Member of the Iowa City Japanese Language Exchange</p>
-					<p>Brief story overview goes here. Donec facilisis tortor ut augue lacinia, at viverra est semper. Sed sapien metus, scelerisque nec pharetra id, tempor a tortor. Pellentesque non dignissim neque. Ut porta viverra est, ut dignissim elit elementum ut. Nunc vel rhoncus nibh, ut tincidunt turpis. Integer ac enim pellentesque, adipiscing metus id.</p>
-				</div>
-			</div>
-		</div>
-	</div>
+	</section>
 
 	<!--
 	=================================
@@ -202,59 +212,61 @@
 				</div>
 			</div>
 
-			<ul class="hscroll-content hscroll-content--cards gridList atMedium_gridList--has2 atLarge_gridList--has4 chunk">
-				<li class="gridList-item">
-					<a class="card card--group chunk inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(assets/img/placeholderMUG/1.png);">
-						<h4 class="text--bold">The Road Not Taken Hikes and Adventures</h4>
-					</a>
-					<p>Thursday, February 3 at 6:30pm</p>
-					<div class="row">
-						<div class="row-item row-item--shrink valign--middle">
-							<div class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg)">Member Name</div>
+			<div class="hscroll hscroll--breakBounds atMedium_hscroll--unclip hscroll--fill">
+				<ul class="hscroll-content hscroll-content--cards gridList atMedium_gridList--has2 atLarge_gridList--has4 chunk">
+					<li class="gridList-item">
+						<a class="card card--group chunk inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(assets/img/placeholderMUG/1.png);">
+							<h4 class="text--bold">The Road Not Taken Hikes and Adventures</h4>
+						</a>
+						<p>Thursday, February 3 at 6:30pm</p>
+						<div class="row">
+							<div class="row-item row-item--shrink valign--middle">
+								<div class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg)">Member Name</div>
+							</div>
+							<div class="row-item valign--middle"><p>Hosted by Sarah</p></div>
 						</div>
-						<div class="row-item valign--middle"><p>Hosted by Sarah</p></div>
-					</div>
-				</li>
+					</li>
 
-				<li class="gridList-item">
-					<a class="card card--group chunk inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(assets/img/placeholderMUG/2.png);">
-						<h4 class="text--bold">Dashing Whippets</h4>
-					</a>
-					<p>Saturday, February 6 at 7:00pm</p>
-					<div class="row">
-						<div class="row-item row-item--shrink valign--middle">
-							<div class="avatar avatar--person avatar--small" style="background-image: url(https://s3.amazonaws.com/uifaces/faces/twitter/sauro/128.jpg)">Member Name</div>
+					<li class="gridList-item">
+						<a class="card card--group chunk inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(assets/img/placeholderMUG/2.png);">
+							<h4 class="text--bold">Dashing Whippets</h4>
+						</a>
+						<p>Saturday, February 6 at 7:00pm</p>
+						<div class="row">
+							<div class="row-item row-item--shrink valign--middle">
+								<div class="avatar avatar--person avatar--small" style="background-image: url(https://s3.amazonaws.com/uifaces/faces/twitter/sauro/128.jpg)">Member Name</div>
+							</div>
+							<div class="row-item valign--middle"><p>Hosted by James</p></div>
 						</div>
-						<div class="row-item valign--middle"><p>Hosted by James</p></div>
-					</div>
-				</li>
+					</li>
 
-				<li class="gridList-item">
-					<a class="card card--group chunk inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(assets/img/placeholderMUG/3.png);">
-						<h4 class="text--bold">NY JavaScript</h4>
-					</a>
-					<p>Tuesday, February 9 at 6:30pm</p>
-					<div class="row">
-						<div class="row-item row-item--shrink valign--middle">
-							<div class="avatar avatar--person avatar--small" style="background-image: url(https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg)">Member Name</div>
+					<li class="gridList-item">
+						<a class="card card--group chunk inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(assets/img/placeholderMUG/3.png);">
+							<h4 class="text--bold">NY JavaScript</h4>
+						</a>
+						<p>Tuesday, February 9 at 6:30pm</p>
+						<div class="row">
+							<div class="row-item row-item--shrink valign--middle">
+								<div class="avatar avatar--person avatar--small" style="background-image: url(https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg)">Member Name</div>
+							</div>
+							<div class="row-item valign--middle"><p>Hosted by Skyler</p></div>
 						</div>
-						<div class="row-item valign--middle"><p>Hosted by Skyler</p></div>
-					</div>
-				</li>
+					</li>
 
-				<li class="gridList-item">
-					<a class="card card--group chunk inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(assets/img/placeholderMUG/4.png);">
-						<h4 class="text--bold">New York Soccer Project's Pick-up</h4>
-					</a>
-					<p>Tuesday, February 9 at 9:30am</p>
-					<div class="row">
-						<div class="row-item row-item--shrink valign--middle">
-							<div class="avatar avatar--person avatar--small" style="background-image: url(https://s3.amazonaws.com/uifaces/faces/twitter/do_fox/128.jpg)">Member Name</div>
+					<li class="gridList-item">
+						<a class="card card--group chunk inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(assets/img/placeholderMUG/4.png);">
+							<h4 class="text--bold">New York Soccer Project's Pick-up</h4>
+						</a>
+						<p>Tuesday, February 9 at 9:30am</p>
+						<div class="row">
+							<div class="row-item row-item--shrink valign--middle">
+								<div class="avatar avatar--person avatar--small" style="background-image: url(https://s3.amazonaws.com/uifaces/faces/twitter/do_fox/128.jpg)">Member Name</div>
+							</div>
+							<div class="row-item valign--middle"><p>Hosted by Nick</p></div>
 						</div>
-						<div class="row-item valign--middle"><p>Hosted by Nick</p></div>
-					</div>
-				</li>
-			</ul>
+					</li>
+				</ul>
+			</div>
 
 			<div class="align--center display--block atMedium_display--none">
 				<a href="#" class="button button--bordered chunk">More nearby</a>

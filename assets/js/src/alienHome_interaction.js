@@ -97,7 +97,8 @@ function priorityPlus_toggle(event) {
 function main_onComplete() {
 	// Initialize app carousel
 	var $storiesGallery = $('.js-storiesCarousel').flickity({
-		pageDots: false
+		pageDots: false,
+		imagesLoaded: true
 	});
 
 	// we can use this to randomize selected cell

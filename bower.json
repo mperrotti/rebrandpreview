@@ -1,7 +1,7 @@
 {
-  "name": "foundation-demo",
+  "name": "rebrandpreview",
   "version": "0.0.1",
-  "description": "Foundation/sq2 framework training",
+  "description": "Rebrand preview page",
   "ignore": [
     "Gemfile",
     ".ruby-version",

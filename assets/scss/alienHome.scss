@@ -53,6 +53,10 @@ a {
 	}
 }
 
+.text--unbold {
+	font-weight: $W_normal;
+}
+
 /*
 -----------------------------
 	LAYOUT
@@ -126,6 +130,15 @@ a {
 .hscroll-content > li {
 	white-space: normal;
 }
+.hscroll--breakBounds {
+	transform: translateX($space);
+	margin-left: -#{$space};
+	@include atMediaUp(medium) {
+		transform: translateX(0);
+		margin-left: 0;
+	}
+}
+
 
 /*
 -----------------------------
@@ -341,27 +354,6 @@ $_tabBorder: 4px; // no change, just needed the var
 	max-width: 40em;
 }
 
-// Ideally, I'd be able to just be
-// able to set this with `media--m`
-.footerScript {
-	height: $media-m;
-	width: auto;
-}
-
-// Kill the view-head
-.view-head {
-	display: none !important;
-}
-
-// Full video bg
-// NOTE: need a x-browser solution
-.videoFill {
-  position:absolute;
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
-
 // "Download the app" buttons
 .appBadge {
 	background: black;
@@ -392,5 +384,61 @@ $_tabBorder: 4px; // no change, just needed the var
 
 	.stripe-heroContent {
 		z-index: 1;
+	}
+}
+
+
+/*
+-----------------------------
+	HACKS
+-----------------------------
+*/
+.hscroll::-webkit-scrollbar {
+	display: none;
+}
+
+.spreadable-item.logo-container {
+	flex-basis: 33%;
+}
+
+// Ideally, I'd be able to just be
+// able to set this with `media--m`
+.footerScript {
+	height: $media-m;
+	width: auto;
+}
+
+// Kill the view-head
+.view-head {
+	display: none !important;
+}
+
+// Full video bg
+// NOTE: need a x-browser solution
+.videoFill {
+  position:absolute;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+$headline-singleLineHeight : $font-size-display2*$line-height;
+$carouselNavArrowWidth     : 44px;
+
+.storiesCarousel-headline {
+	transform: translateY($headline-singleLineHeight);
+}
+
+.paddingLeft--storiesCarousel {
+	padding-left: $space;
+	@include atMediaUp(medium) {
+		padding-left: $carouselNavArrowWidth + $space;
+	}
+}
+
+.storiesCarousel .runningText > p {
+	padding-top: $headline-singleLineHeight + $space;
+	@include atMediaUp(medium) {
+		padding: ($headline-singleLineHeight + $space) 0;
 	}
 }
