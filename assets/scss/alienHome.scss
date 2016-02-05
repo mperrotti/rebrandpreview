@@ -18,6 +18,7 @@ SQ3 CANDIDATE
 	TYPE
 -----------------------------
 */
+$W_medium: 500;
 
 /* _body-text.scss */
 body {
@@ -44,6 +45,22 @@ a {
 .text--headline {
 	font-weight: $W_bold;
 }
+
+.header {
+	color: $C_textPrimary;
+	font-size: $font-size-small;
+	font-weight: $W_bold;
+	text-transform: uppercase;
+	@include i18n-only('en') {
+		text-transform: uppercase;
+	}
+}
+
+.header--secondary {
+	color: $C_textSecondary;
+	font-weight: $W_medium;
+}
+
 
 /* _type.scss */
 %link {
@@ -450,15 +467,31 @@ $carouselNavArrowWidth     : 44px;
 			color: $C_textPrimaryInverted !important;
 		}
 	}
-	.mainNav--photoOverlay {
-		background: transparent;
+	// .mainNav--photoOverlay {
+	// 	background: transparent;
+	// }
+}
+
+.mainNav--photoOverlay {
+	background: transparent;
+}
+
+.storiesCarousel, .appCarousel {
+	.flickity-prev-next-button.previous {
+		left: 0;
 	}
-}
-
-.storiesCarousel .flickity-prev-next-button.previous {
-	left: -#{$carouselNavArrowWidth + $space};
-}
-
-.storiesCarousel .flickity-prev-next-button.next {
-	right: -#{$carouselNavArrowWidth + $space};
+	.flickity-prev-next-button.next {
+		right: 0;
+	}
+	@include atMediaUp(huge) {
+		.flickity-prev-next-button.previous {
+			left: -#{$carouselNavArrowWidth + $space};
+		}
+		.flickity-prev-next-button.next {
+			right: -#{$carouselNavArrowWidth + $space};
+		}
+	}
+	.flickity-prev-next-button:disabled{
+		opacity: 0;
+	}
 }

@@ -41,6 +41,10 @@
 						<img src="assets/img/VideoImg.png" alt="" class="span--100">
 					</div>
 				</div>
+				<!-- <div class="chunk align--center">
+					<p class="chunk text--bold">Local communities everywhere about almost everything</p>
+					<a href="#" class="button button--primary">Get the new app</a>
+				</div> -->
 			</div>
 		</div>
 	</div>
@@ -52,6 +56,12 @@
 	-->
 	<section class="stripe stripe--noBorder"><div class="bounds bounds--wide">
 		<!-- <h3 class="text--headline align--center chunk">Local communities for everything you’re into</h3> -->
+		<!-- <div class="spreadable atMedium_spreadable--spread chunk">
+			<div class="spreadable-item">
+				<p>Local communities everywhere about almost everything</p>
+			</div>
+			<div class="spreadable-item--shrink"><a href="#" class="button button--primary">Get the new app</a></div>
+		</div> -->
 		<ul class="gridList gridList--has2 atLarge_gridList--has4 chunk">
 		{{#each categories:i}}
 
@@ -76,6 +86,7 @@
 			</div>
 			<div class="spreadable-item">
 				<div class="chunk">
+					<h3 class="header header--secondary">Our new brand</h3>
 					<h2 class="text--headline">Collectively, connceted humans will be capable of things we cannot imagine right now.</h2>
 					<p>—Kevin Kelly</p>
 				</div>
@@ -90,7 +101,51 @@
 		<ul class="gridList gridList--has2 atLarge_gridList--has4 chunk">
 		{{#each categories:i}}
 
-			{{#if i > 7}}
+			{{#if i > 7 && i < 12}}
+			<li class="gridList-item">
+				<a href="#">
+					<img src="./assets/img/categories/{{shortname}}.jpg" alt="{{name}}" class="span--100">
+					<p class="text--bold">{{name}}</p>
+					<p class="text--caption">{{helpers.random(8, 23)}}k Meetups</p>
+				</a>
+			</li>
+			{{/if}}
+
+		{{/each}}
+
+			<li class="gridList-item">
+				<a href="#">
+					<img src="./assets/img/categories/films.jpg" alt="{{name}}" class="span--100">
+					<p class="text--bold">Film</p>
+					<p class="text--caption">{{helpers.random(8, 23)}}k Meetups</p>
+				</a>
+			</li>
+
+		{{#each categories:i}}
+
+			{{#if i > 11 && i < 19}}
+			<li class="gridList-item">
+				<a href="#">
+					<img src="./assets/img/categories/{{shortname}}.jpg" alt="{{name}}" class="span--100">
+					<p class="text--bold">{{name}}</p>
+					<p class="text--caption">{{helpers.random(8, 23)}}k Meetups</p>
+				</a>
+			</li>
+			{{/if}}
+
+		{{/each}}
+
+			<li class="gridList-item">
+				<a href="#">
+					<img src="./assets/img/categories/fashion.jpg" alt="{{name}}" class="span--100">
+					<p class="text--bold">Fashion</p>
+					<p class="text--caption">{{helpers.random(8, 23)}}k Meetups</p>
+				</a>
+			</li>
+
+		{{#each categories:i}}
+
+			{{#if i > 18}}
 			<li class="gridList-item">
 				<a href="#">
 					<img src="./assets/img/categories/{{shortname}}.jpg" alt="{{name}}" class="span--100">
@@ -112,7 +167,7 @@
 	<section class="stripe"><div class="bounds bounds--wide">
 		<div class="spreadable atMedium_spreadable--spread chunk">
 			<h3 class="text--headline chunk align--center display--block atMedium_display--none">Preview the new Meetup with our app</h3>
-			<div class="spreadable-item spreadable-item--shrink"><img src="assets/img/appCapture.png" alt="App Mock" class="margin--center display--none atMedium_display--block"/></div>
+			<div class="spreadable-item spreadable-item--shrink flush--left"><img src="assets/img/appCapture.png" alt="App Mock" class="margin--center display--none atMedium_display--block"/></div>
 			<div class="spreadable-item valign--middle">
 				<h3 class="text--headline chunk display--none atMedium_display--block">Preview the new Meetup with our app</h3>
 
@@ -175,10 +230,10 @@
 		<div class="bounds bounds--wide">
 			<h3 class="text--headline storiesCarousel-headline paddingLeft--storiesCarousel">
 				<a href="#" class="link text--unbold" on-click="changeVerb">Learn to code</a>
-				<span class="display--block">with people</span>
+				<span class="display--block">with women who program</span>
 			</h3>
 			<div class="js-storiesCarousel">
-				<div class="spreadable atMedium_spreadable--spread span--100">
+				<div class="spreadable atMedium_spreadable--spread margin--right span--100">
 					<div class="spreadable-item valign--middle">
 						<div class="runningText chunk paddingLeft--storiesCarousel">
 							<p>Brief story overview goes here. Donec facilisis tortor ut augue lacinia, at viverra est semper. Sed sapien metus, scelerisque nec pharetra id, tempor a tortor. Pellentesque non dignissim neque. Ut porta viverra est, ut dignissim elit elementum ut. Nunc vel rhoncus nibh, ut tincidunt turpis. Integer ac enim pellentesque, adipiscing metus id.</p>
@@ -189,7 +244,7 @@
 						<p class="text--caption">Sally, organizer of <a href="#" class="link text--bold">Iowa City Ladies Who JS</a></p>
 					</div>
 				</div>
-				<div class="spreadable atMedium_spreadable--spread span--100">
+				<div class="spreadable atMedium_spreadable--spread margin--right span--100">
 					<div class="spreadable-item valign--middle">
 						<div class="runningText chunk paddingLeft--storiesCarousel">
 							<p>Brief story overview goes here. Donec facilisis tortor ut augue lacinia, at viverra est semper. Sed sapien metus, scelerisque nec pharetra id, tempor a tortor. Pellentesque non dignissim neque. Ut porta viverra est, ut dignissim elit elementum ut. Nunc vel rhoncus nibh, ut tincidunt turpis. Integer ac enim pellentesque, adipiscing metus id.</p>
