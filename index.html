@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="purpleHeader">
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
@@ -28,15 +28,19 @@
 <body>
 
 <script type="text/template" id="main-template">
-	<div class="stripe stripe--photoHero ghettoScrim" style="background-image: url('assets/img/heroPlaceholder.png');">
-
-		<!-- <video class='videoFill' autoplay loop name="media"><source src="assets/img/stockFootage.mp4" type="video/mp4"></video> -->
-
-		<div class="stripe-heroContent stripe-heroContent--full valign--middle">
-			<div class="bounds bounds--wide align--center chunk margin--top inverted">
-				<h3 class="text--display">Meet your people.</h3>
-				<p class="chunk">Local communities meeting up around shared interests</p>
-				<a href="#" class="button button--primary">Get the new app</a>
+	<div class="stripe headerStripe js-headerStripe">
+		<div class="stripe-heroContent stripe-heroContent--full">
+			<div class="bounds bounds--wide align--left chunk margin--top">
+				<div class="spreadable atMedium_spreadable--spread">
+					<div class="spreadable-item spreadable-item--shrink valign--middle">
+						<h3 class="text--display chunk">Meet your <br> people</h3>
+						<!-- <p class="chunk">Subtext about Meetup being for finding communities where you live</p> -->
+						<a href="#" class="button button--primary">Get the new app</a>
+					</div>
+					<div class="spreadable-item">
+						<img src="assets/img/VideoImg.png" alt="" class="span--100">
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -168,31 +172,33 @@
 	=================================
 	-->
 	<section class="stripe padding--top padding--bottom storiesCarousel">
-		<h3 class="text--headline paddingLeft--storiesCarousel storiesCarousel-headline">
-			<a href="#" class="link text--unbold" on-click="changeVerb">Learn to code</a>
-			<span class="display--block">with people</span>
-		</h3>
-		<div class="js-storiesCarousel">
-			<div class="spreadable atMedium_spreadable--spread span--100">
-				<div class="spreadable-item valign--middle">
-					<div class="runningText paddingLeft--storiesCarousel chunk">
-						<p>Brief story overview goes here. Donec facilisis tortor ut augue lacinia, at viverra est semper. Sed sapien metus, scelerisque nec pharetra id, tempor a tortor. Pellentesque non dignissim neque. Ut porta viverra est, ut dignissim elit elementum ut. Nunc vel rhoncus nibh, ut tincidunt turpis. Integer ac enim pellentesque, adipiscing metus id.</p>
+		<div class="bounds bounds--wide">
+			<h3 class="text--headline storiesCarousel-headline paddingLeft--storiesCarousel">
+				<a href="#" class="link text--unbold" on-click="changeVerb">Learn to code</a>
+				<span class="display--block">with people</span>
+			</h3>
+			<div class="js-storiesCarousel">
+				<div class="spreadable atMedium_spreadable--spread span--100">
+					<div class="spreadable-item valign--middle">
+						<div class="runningText chunk paddingLeft--storiesCarousel">
+							<p>Brief story overview goes here. Donec facilisis tortor ut augue lacinia, at viverra est semper. Sed sapien metus, scelerisque nec pharetra id, tempor a tortor. Pellentesque non dignissim neque. Ut porta viverra est, ut dignissim elit elementum ut. Nunc vel rhoncus nibh, ut tincidunt turpis. Integer ac enim pellentesque, adipiscing metus id.</p>
+						</div>
+					</div>
+					<div class="spreadable-item valign--middle">
+						<img src="assets/img/users/coffeegirl_full.jpg" alt="" class="span--100">
+						<p class="text--caption">Sally, organizer of <a href="#" class="link text--bold">Iowa City Ladies Who JS</a></p>
 					</div>
 				</div>
-				<div class="spreadable-item valign--middle">
-					<img src="assets/img/users/coffeegirl_full.jpg" alt="" class="span--100">
-					<p class="text--caption">Sally, organizer of <a href="#" class="link text--bold">Iowa City Ladies Who JS</a></p>
-				</div>
-			</div>
-			<div class="spreadable atMedium_spreadable--spread span--100">
-				<div class="spreadable-item valign--middle">
-					<div class="runningText paddingLeft--storiesCarousel chunk">
-						<p>Brief story overview goes here. Donec facilisis tortor ut augue lacinia, at viverra est semper. Sed sapien metus, scelerisque nec pharetra id, tempor a tortor. Pellentesque non dignissim neque. Ut porta viverra est, ut dignissim elit elementum ut. Nunc vel rhoncus nibh, ut tincidunt turpis. Integer ac enim pellentesque, adipiscing metus id.</p>
+				<div class="spreadable atMedium_spreadable--spread span--100">
+					<div class="spreadable-item valign--middle">
+						<div class="runningText chunk paddingLeft--storiesCarousel">
+							<p>Brief story overview goes here. Donec facilisis tortor ut augue lacinia, at viverra est semper. Sed sapien metus, scelerisque nec pharetra id, tempor a tortor. Pellentesque non dignissim neque. Ut porta viverra est, ut dignissim elit elementum ut. Nunc vel rhoncus nibh, ut tincidunt turpis. Integer ac enim pellentesque, adipiscing metus id.</p>
+						</div>
 					</div>
-				</div>
-				<div class="spreadable-item valign--middle">
-					<img src="assets/img/users/barberguy.jpg" alt="" class="span--100">
-					<p class="text--caption">Ben, organizer of <a href="#" class="link text--bold">Manitoba Tech Meetup</a></p>
+					<div class="spreadable-item valign--middle">
+						<img src="assets/img/users/barberguy.jpg" alt="" class="span--100">
+						<p class="text--caption">Ben, organizer of <a href="#" class="link text--bold">Manitoba Tech Meetup</a></p>
+					</div>
 				</div>
 			</div>
 		</div>

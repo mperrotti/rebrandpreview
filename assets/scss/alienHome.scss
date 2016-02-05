@@ -429,16 +429,36 @@ $carouselNavArrowWidth     : 44px;
 	transform: translateY($headline-singleLineHeight);
 }
 
-.paddingLeft--storiesCarousel {
-	padding-left: $space;
-	@include atMediaUp(medium) {
-		padding-left: $carouselNavArrowWidth + $space;
-	}
-}
+// .paddingLeft--storiesCarousel {
+// 	padding-left: $space;
+// 	@include atMediaUp(medium) {
+// 		padding-left: $carouselNavArrowWidth + $space;
+// 	}
+// }
 
 .storiesCarousel .runningText > p {
 	padding-top: $headline-singleLineHeight + $space;
 	@include atMediaUp(medium) {
 		padding: ($headline-singleLineHeight + $space) 0;
 	}
+}
+
+.purpleHeader {
+	.headerStripe {
+		background-color: #371EAC;
+		h3, p {
+			color: $C_textPrimaryInverted !important;
+		}
+	}
+	.mainNav--photoOverlay {
+		background: transparent;
+	}
+}
+
+.storiesCarousel .flickity-prev-next-button.previous {
+	left: -#{$carouselNavArrowWidth + $space};
+}
+
+.storiesCarousel .flickity-prev-next-button.next {
+	right: -#{$carouselNavArrowWidth + $space};
 }
