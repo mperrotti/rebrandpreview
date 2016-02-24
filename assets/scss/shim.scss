@@ -37,6 +37,7 @@ Styles that live in Chapstick or somewhere outside of SQ2
 	}
 }
 
+$C_modalShade: rgba(0,0,0,.4);
 .shade {
 	height: 100%;
 	left: 0;
@@ -70,6 +71,8 @@ Styles that live in Chapstick or somewhere outside of SQ2
   &.off {
     opacity: 0;
   }
+
+	$pointer_size: 16px;
 
   &.top-left{
       margin-left: -($pointer_size);
@@ -141,4 +144,11 @@ Quick-and-dirty fixes
 
 .gridList > li.display--none {
 	display: none;
+}
+
+.inlineblockList.text--small {
+	line-height: 1.25;
+}
+.text--display{
+	margin-bottom: 4px;
 }
