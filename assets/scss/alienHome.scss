@@ -404,18 +404,27 @@ $_tabBorder: 4px; // no change, just needed the var
 
 	@include atMediaUp(medium) {
 		min-height: 384px;
-		.stripe-heroContent {
-			min-height: 0;
-		}
+		// .stripe-heroContent {
+		// 	min-height: 0;
+		// }
 	}
 
 	&:before {
 		background-color: transparentize($C_black, .8);
+		background-image: none;
 		z-index: 1;
     background-blend-mode: screen;
 	}
 
 	.stripe-heroContent {
 		z-index: 1;
+		min-height: 0;
 	}
 }
+
+.mainNav--photoOverlay {
+	background: -webkit-linear-gradient(transparentize($C_contentBGInverted, .5), transparentize($C_contentBGInverted, 1));
+	background: linear-gradient(transparentize($C_contentBGInverted, .5), transparentize($C_contentBGInverted, 1));
+	box-shadow: none;
+}
+
