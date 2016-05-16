@@ -39,6 +39,14 @@ a {
 /* _headings.scss */
 .text--display {
 	font-weight: $W_bold;
+
+	// mimicking newer sassquatch styles
+	line-height: 1.25;
+}
+
+// mimicking newer sassquatch styles
+.text--display2 {
+	font-size: 34px;
 }
 
 .text--headline {
