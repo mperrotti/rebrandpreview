@@ -12,14 +12,17 @@
   ],
   "dependencies": {
     "sassquatch2": null,
-		"jquery": null,
-		"moment": null,
-		"ractive": null,
-		"ractive-load": null,
-		"rlite": null,
-		"jquery.cookie": null,
-		"jquery-autosize": null,
-		"jquery-waypoints": "~2"
+    "jquery": null,
+    "moment": null,
+    "ractive": null,
+    "ractive-load": null,
+    "rlite": null,
+    "jquery.cookie": null,
+    "jquery-autosize": null,
+    "jquery-waypoints": "~2"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "flickity": "~1.1.2"
+  }
 }

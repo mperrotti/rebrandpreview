@@ -39,6 +39,14 @@ a {
 /* _headings.scss */
 .text--display {
 	font-weight: $W_bold;
+
+	// mimicking newer sassquatch styles
+	line-height: 1.25;
+}
+
+// mimicking newer sassquatch styles
+.text--display2 {
+	font-size: 34px;
 }
 
 .text--headline {
@@ -69,14 +77,23 @@ a {
 	background-color: $C_contentBGInverted; // no change, just different color
 }
 
-.stripe--noBorder {
-	border-top: none;
+.stripe--noBorder { // new variant
+	border-width: 0px !important;
 	padding-top: $space-double;
 }
 
-/* NEW: _photoOverlay.scss */
-.photoOverlay {
-	background-color: $C_photoOverlay;
+// fixes to stripe-overlap
+.stripe--overlap {
+	position: relative;
+	.bounds {
+		position: relative;
+	}
+}
+.stripe--overlap:not(.stripe--hero),
+.stripe--overlap:not(.stripe--photoHero) {
+	&:before {
+		border-top: 1px solid $C_border;
+	}
 }
 
 /* _gridList.scss */
@@ -114,6 +131,10 @@ a {
 	}
 }
 
+.hscroll-content > li {
+	white-space: normal;
+}
+
 /*
 -----------------------------
 	UI COMPONENTS
@@ -124,11 +145,11 @@ a {
 $_hoverChange: 8%;
 
 .button {
-	background: $C_accentDark;
+	background: $C_accent;
 	box-shadow: none !important;
 	color: $C_textPrimaryInverted;
 	line-height: $line-height; // temporary hacky fix for weird button text alignment
-	min-height: ($font-size * $line-height) + $space;
+	//min-height: ($font-size * $line-height) + $space;
 	padding: $space-half $space;
 
 	use {
@@ -136,15 +157,20 @@ $_hoverChange: 8%;
 	}
 
 	&:hover {
-		background: lighten($C_accentDark, $_hoverChange) !important;
+		background: lighten($C_accent, $_hoverChange) !important;
 	}
 }
+
 .button--primary {
 	background: $C_accent !important;
 	&:hover {
 		background: darken($C_accent, $_hoverChange) !important;
 	}
 }
+
+// .button--small { //
+// 	min-height: 0;
+// }
 
 /* same as in SQ2, but with rebrand colors */
 .button--bordered {
@@ -220,7 +246,7 @@ $_hoverChange: 8%;
 	z-index: 1;
 
 	.stripe--collection & {
-		box-shadow: -#{$space-half} 0 $space $C_collectionBGLight;
+		box-shadow: -#{$space-half} 0 $space $C_collectionBG;
 	}
 
 	.inverted & {
@@ -251,8 +277,8 @@ $_hoverChange: 8%;
 /* _tabs.scss */
 $_tabBorder: 4px; // no change, just needed the var
 .tabs-tab--selected {
-	color: $C_accentDark;
-	border-bottom: $_tabBorder solid $C_accentDark;
+	color: $C_accent;
+	border-bottom: $_tabBorder solid $C_accent;
 }
 
 .tabs--vert {
@@ -263,7 +289,7 @@ $_tabBorder: 4px; // no change, just needed the var
 		margin-left: 0;
 	}
 	.tabs-tab--selected {
-		border-left: $_tabBorder solid $C_accentDark;
+		border-left: $_tabBorder solid $C_accent;
 		border-bottom: 1px solid $C_border;
 		padding: $space-half;
 	}
@@ -272,7 +298,7 @@ $_tabBorder: 4px; // no change, just needed the var
 /* NEW: _well.scss */
 /* Mike P: I don't think this should be it's own 'ui component'. Where does it belong? */
 .well {
-	background: $C_collectionBGLight;
+	background: $C_collectionBG;
 }
 
 /*
@@ -318,8 +344,38 @@ $_tabBorder: 4px; // no change, just needed the var
 -----------------------------
 */
 
+// App carousel styles
+.cell-content {
+	max-width: 40em;
+}
+
+// Story carousel
+.stories-cell {
+	width: 100%;
+}
+
+.storiesNavContainer {
+	@include atMediaUp(large) {
+		position: absolute;
+		right: 0;
+		z-index: 999;
+		padding: $space;
+		margin: $space 0;
+		height: 100%;
+		box-sizing: border-box;
+	}
+}
+
+.storiesNav {
+	@include atMediaUp(large) {
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+
 // Ideally, I'd be able to just be
-// able to set this with `media--xl`
+// able to set this with `media--m`
 .footerScript {
 	height: $media-m;
 	width: auto;
@@ -349,3 +405,34 @@ $_tabBorder: 4px; // no change, just needed the var
 		width: auto;
 	}
 }
+
+// ONLY FOR THE BOARD DEMO. KILL THIS STYLE WITH FILE
+.ghettoScrim {
+	min-height: 70vh;
+
+	@include atMediaUp(medium) {
+		min-height: 384px;
+		// .stripe-heroContent {
+		// 	min-height: 0;
+		// }
+	}
+
+	&:before {
+		background-color: transparentize($C_black, .8);
+		background-image: none;
+		z-index: 1;
+    background-blend-mode: screen;
+	}
+
+	.stripe-heroContent {
+		z-index: 1;
+		min-height: 0;
+	}
+}
+
+.mainNav--photoOverlay {
+	background: -webkit-linear-gradient(transparentize($C_contentBGInverted, .5), transparentize($C_contentBGInverted, 1));
+	background: linear-gradient(transparentize($C_contentBGInverted, .5), transparentize($C_contentBGInverted, 1));
+	box-shadow: none;
+}
+

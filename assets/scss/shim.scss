@@ -45,7 +45,7 @@ Styles that live in Chapstick or somewhere outside of SQ2
 	width: 100%;
 	z-index: map-get($zindex-map, "shade");
 	@include transition(all .15s);
-	background: $C_modalShade;
+	background: $C_dimmingOverlay;
 	opacity: 1;
 	&.off{
 		opacity: 0;
@@ -72,10 +72,10 @@ Styles that live in Chapstick or somewhere outside of SQ2
   }
 
   &.top-left{
-      margin-left: -($pointer_size);
+      margin-left: -12px;
   }
   &.top-right{
-      margin-left: $pointer_size;
+      margin-left: 12px;
   }
 
   .momentary-btn-list {

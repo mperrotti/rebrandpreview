@@ -4,6 +4,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-wiredep');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-svgstore');
 	grunt.loadNpmTasks('grunt-svginjector');
@@ -99,6 +100,12 @@ module.exports = function(grunt) {
 				options: {
 					container: 'icon-container'
 				}
+			}
+		},
+
+		'wiredep': {
+			sass: {
+				src: [ 'bower_components/sassquatch2/sass/_util.scss' ]
 			}
 		},
 

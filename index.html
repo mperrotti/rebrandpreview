@@ -13,99 +13,248 @@
 
 	<!-- Load Sassquatch2 -->
 	<link rel="stylesheet" href="assets/css/sq2.css" />
-	<link rel="stylesheet" href="assets/css/colorfilter.css" />
 
 	<!-- Page-specific styles -->
 	<link rel="stylesheet" href="assets/css/alienHome.css" />
+	<link rel="stylesheet" href="bower_components/flickity/dist/flickity.min.css" media="screen">
 
 	<!-- JS to load before the page loads -->
 	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
 	<script type="text/javascript" src="assets/js/dist/depends.min.js"></script>
+	<script type="text/javascript" src="bower_components/flickity/dist/flickity.pkgd.js"></script>
 
 </head>
 
 <body>
 
 <script type="text/template" id="main-template">
-	<div class="stripe stripe--photoHero" style="background-image: url('assets/img/heroPlaceholder.png');">
+	<div class="stripe stripe--photoHero ghettoScrim" style="background-image: url('assets/img/heroPlaceholder.png');">
 
-		<video class='videoFill' autoplay loop name="media"><source src="assets/img/stockFootage.mp4" type="video/mp4"></video>
+		<video class='videoFill' autoplay loop name="media"><source src="assets/img/metapattern.mp4" type="video/mp4"></video>
 
-		<div class="stripe-heroContent stripe-heroContent--full column">
-			<div class="bounds bounds--wide align--center column-item chunk margin--top inverted">
-				<h3 class="text--display">Meet your people.</h3>
-				<p class="chunk">Local communities meeting up around shared interests</p>
-				<!-- <div class="chunk">
-					<a href="#" class="button button--primary">Sign Up</a>
-				</div>
-				<div class="chunk">
-					<a href="#" class="link">Log In</a>
-				</div> -->
-			</div>
-
-			<div class="photoOverlay column-item--shrink shaded">
-				<div class="bounds">
-					<div class="spreadable atMedium_spreadable--spread">
-						<div class="spreadable-item chunk">
-							<label for="topic-search" class="visibility--a11yHide">Search for a topic</label>
-							<input class="input--withIcon" id="topic-search" type="text" placeholder="What are you interested in?" style="background-image:url('assets/img/magnifying-glass.svg')" />
-						</div>
-
-						<div class="spreadable-item spreadable-item--shrink row chunk">
-							<div class="row-item">
-								<label for="city-search" class="visibility--a11yHide">Enter your city</label>
-								<input class="input--withIcon input--withIcon--right" id="city-search" type="text" placeholder="Enter your city" value="New York, NY" style="background-image:url('assets/icons/svg/triangleDown.svg')" />
-							</div>
-							<div class="row-item row-item--shrink inverted">
-								<button class="button button--bordered">Search</button>
-							</div>
-						</div>
-
-					</div>
-				</div>
+		<div class="stripe-heroContent stripe-heroContent--full valign--middle">
+			<div class="bounds bounds--wide align--center chunk inverted flush--all">
+				<h3 class="text--display chunk">Do what you love</h3>
+				<!-- <p class="chunk">Local communities meeting up around shared interests</p> -->
+				<a href="#" class="button button--primary">Get the new app</a>
 			</div>
 		</div>
 	</div>
 
 	<!--
 	=================================
-	LOCAL MUGS
+	CATEGORIES
 	=================================
-
-	Data needs:
-	* This week    : By `most_active`. If no scheduled MUP, fill with some default
-	* Popular      : By `members`. If no scheduled MUP, fill with some default
-	* Get in shape : Matches topic `fitness` (id: 242)
-	* Get outdoors : Matches topic `outdoors` (id: 15046)
-	* Learn lang   : Matches topic `language & culture` (id: 10454)
-	* Learn code   : Matches topic `social coding` (id: 90286)
-	* Meet people  : Matches topic `new in town` (id: 1273)
 	-->
+	<section class="stripe stripe--noBorder"><div class="bounds bounds--wide">
+		<h3 class="text--headline align--center chunk">Local communities for everything you’re into</h3>
+		<ul class="gridList gridList--has2 atLarge_gridList--has4 chunk">
+		{{#each categories:i}}
+
+			{{#if i < 8}}
+			<li class="gridList-item">
+				<a href="#">
+					<span class="imgFill keepAspect keepAspect--3-2 display--block" style="background-image: url(./assets/img/categories/{{shortname}}.jpg)"></span>
+					<p class="text--bold align--center">{{name}}</p>
+				</a>
+			</li>
+			{{/if}}
+
+		{{/each}}
+		</ul>
+	</div></section>
 
 	<section class="stripe stripe--noBorder"><div class="bounds bounds--wide">
-		<div class="priorityPlus">
-			<a href="#" on-click="priorityPlus_toggle" data-toggle-actions="closed" class="priorityPlus-showAll padding--all link">
-				<span class="text--small">all <i class="fa fa-angle-down"></i></span>
-			</a>
-			<ul class="tabs priorityPlus-list">
-				<li class="tabs-tab tabs-tab--selected" on-click="switchTab"><a href="#thisWeek" class="wrap--singleLine">This week</a></li>
-				<li class="tabs-tab" on-click="switchTab"><a href="#mostPopular" class="wrap--singleLine">Most popular</a></li>
-				<li class="tabs-tab" on-click="switchTab"><a href="#inShape" class="wrap--singleLine">Get in shape</a></li>
-				<li class="tabs-tab" on-click="switchTab"><a href="#getOutdoors" class="wrap--singleLine">Get outdoors</a></li>
-				<li class="tabs-tab" on-click="switchTab"><a href="#learnLanguage" class="wrap--singleLine">Learn a language</a></li>
-				<li class="tabs-tab" on-click="switchTab"><a href="#learnCode" class="wrap--singleLine">Learn to code</a></li>
-				<li class="tabs-tab" on-click="switchTab"><a href="#meetPeople" class="wrap--singleLine">Meet new people</a></li>
+		<div class="spreadable atMedium_spreadable--spread chunk align--center atMedium_align--left">
+			<div class="spreadable-item spreadable-item--shrink">
+				<img src="assets/img/logoSwarm.svg" alt="Meetup logo" class="media--xl margin--center">
+			</div>
+			<div class="spreadable-item valign--middle">
+				<h2 class="text--display text--display2 chunk margin--top">Collectively, connceted humans will be capable of things we cannot imagine right now.</h2>
+				<p>—Kevin Kelly</p>
+			</div>
+		</div>
+		<div class="bordered align--right"><a href="#blogpost" class="link"><span class="valign--middle">Read about the rebrand</span> {{{helpers.svgIcon('arrowRight', 'valign--middle')}}}</a></div>
+	</div></section>
+
+	<section class="stripe stripe--noBorder"><div class="bounds bounds--wide">
+		<ul class="gridList gridList--has2 atLarge_gridList--has4 chunk">
+		{{#each categories:i}}
+
+			{{#if i > 8 && i < 17}}
+			<li class="gridList-item">
+				<a href="#">
+					<span class="imgFill keepAspect keepAspect--3-2 display--block" style="background-image: url(./assets/img/categories/{{shortname}}.jpg)"></span>
+					<p class="text--bold align--center">{{name}}</p>
+				</a>
+			</li>
+			{{/if}}
+
+		{{/each}}
+		</ul>
+	</div></section>
+
+	<div class="js-storiesCarousel stories inverted">
+		<div class="stories-cell stripe stripe--photoHero" style="background-image: url(./assets/img/users/barberguy.jpg);">
+			<div class="bounds bounds--wide stripe-heroContent align--left flush--top">
+				<div class="story-content runningText chunk">
+					<h3 class="text--headline">Ben</h3>
+					<p class="chunk">Member of the Sacremento Tech Meeetup</p>
+					<p>Brief story overview goes here. Donec facilisis tortor ut augue lacinia, at viverra est semper. Sed sapien metus, scelerisque nec pharetra id, tempor a tortor. Pellentesque non dignissim neque. Ut porta viverra est, ut dignissim elit elementum ut. Nunc vel rhoncus nibh, ut tincidunt turpis. Integer ac enim pellentesque, adipiscing metus id.</p>
+				</div>
+			</div>
+		</div>
+		<div class="stories-cell stripe stripe--photoHero" style="background-image: url(./assets/img/users/coffeegirl.jpg);">
+			<div class="bounds bounds--wide stripe-heroContent align--left flush--top">
+				<div class="story-content runningText chunk">
+					<h3 class="text--headline">Sally</h3>
+					<p class="chunk">Organizer of the Coffee and Cats Meetup</p>
+					<p>Brief story overview goes here. Donec facilisis tortor ut augue lacinia, at viverra est semper. Sed sapien metus, scelerisque nec pharetra id, tempor a tortor. Pellentesque non dignissim neque. Ut porta viverra est, ut dignissim elit elementum ut. Nunc vel rhoncus nibh, ut tincidunt turpis. Integer ac enim pellentesque, adipiscing metus id.</p>
+				</div>
+			</div>
+		</div>
+		<div class="stories-cell stripe stripe--photoHero" style="background-image: url(./assets/img/users/fashiongirl.jpg);">
+			<div class="bounds bounds--wide stripe-heroContent align--left flush--top">
+				<div class="story-content runningText chunk">
+					<h3 class="text--headline">Sam</h3>
+					<p class="chunk">Member of the Iowa City Japanese Language Exchange</p>
+					<p>Brief story overview goes here. Donec facilisis tortor ut augue lacinia, at viverra est semper. Sed sapien metus, scelerisque nec pharetra id, tempor a tortor. Pellentesque non dignissim neque. Ut porta viverra est, ut dignissim elit elementum ut. Nunc vel rhoncus nibh, ut tincidunt turpis. Integer ac enim pellentesque, adipiscing metus id.</p>
+				</div>
+			</div>
+		</div>
+		<div class="storiesNavContainer">
+			<ul class="js-storiesNav storiesNav list valign--middle">
+				<li class="list-item"><a href="#0" class="chunk">Learn to code</a></li>
+				<li class="list-item"><a href="#1" class="chunk">Get outside</a></li>
+				<li class="list-item"><a href="#2" class="chunk">Learn a new language</a></li>
+				<li class="list-item"><a href="#3" class="chunk">Get in shape</a></li>
+				<li class="list-item"><a href="#4" class="chunk">Mobilize your movement</a></li>
 			</ul>
 		</div>
+	</div>
 
-		<!-- HAPPENING THIS WEEK -->
-		<div class="js-tabContent" id="thisWeek">
-			<ul class="gridList gridList--has1 atMedium_gridList--has2 atLarge_gridList--has4 chunk">
-				<li>
+	<section class="stripe stripe--noBorder"><div class="bounds bounds--wide">
+		<ul class="gridList gridList--has2 atLarge_gridList--has4 chunk">
+		{{#each categories:i}}
+
+			{{#if i > 17}}
+			<li class="gridList-item">
+				<a href="#">
+					<span class="imgFill keepAspect keepAspect--3-2 display--block" style="background-image: url(./assets/img/categories/{{shortname}}.jpg)"></span>
+					<p class="text--bold align--center">{{name}}</p>
+				</a>
+			</li>
+			{{/if}}
+
+		{{/each}}
+		</ul>
+	</div></section>
+
+	<section class="stripe stripe--overlap"><div class="bounds bounds--wide">
+		<div class="spreadable atMedium_spreadable--spread">
+			<h3 class="text--headline chunk align--center display--block atMedium_display--none">Preview the new Meetup with our app</h3>
+			<div class="spreadable-item spreadable-item--shrink"><img src="assets/img/appCapture.png" alt="App Mock" class="margin--center display--none atMedium_display--block"/></div>
+			<div class="spreadable-item valign--middle">
+				<h3 class="text--headline chunk display--none atMedium_display--block">Preview the new Meetup with our app</h3>
+
+				<div class="display--none atMedium_display--block"><div class="chunk">
+					<h3 class="text--bold">More personalized</h3>
+					<p>We have made it even easier to find the Meetup that’s right for you, whether you want to get in shape, learn a new language, or network with industry colleagues. There’s something for everybody—come find what’s right for you.</p>
+				</div>
+
+				<div class="spreadable atLarge_spreadable--spread">
+					<div class="spreadable-item chunk">
+						<h3 class="text--bold">Guage local interest</h3>
+						<p>Talk about how cool seeded MUGs are Pellentesque non dignissim neque. Ut porta viverra est, ut dignissim elit elementum ut.</p>
+					</div>
+					<div class="spreadable-item chunk">
+						<h3 class="text--bold">Rethought and simplified</h3>
+						<p>Mobile-first blurb that also touches on de-cluttered screens and clearer hierarchy. Ut porta viverra est, ut dignissim elit elementum.</p>
+					</div>
+				</div></div>
+
+				<div class="display--block atMedium_display--none"><div class="js-appCarousel appCarousel chunk">
+					<div class="appCarousel-cell span--100 align--center">
+						<div class="cell-content margin--center">
+							<img src="http://placehold.it/350x150" class="margin--center chunk">
+							<h3 class="text--bold">More personalized</h3>
+							<p>We have made it even easier to find the Meetup that’s right for you, whether you want to get in shape, learn a new language, or network with industry colleagues. There’s something for everybody—come find what’s right for you.</p>
+						</div>
+					</div>
+					<div class="appCarousel-cell span--100 align--center">
+						<div class="cell-content margin--center">
+							<img src="http://placehold.it/350x150" class="margin--center chunk">
+							<h3 class="text--bold">Guage local interest</h3>
+							<p>Talk about how cool seeded MUGs are Pellentesque non dignissim neque. Ut porta viverra est, ut dignissim elit elementum ut.</p>
+						</div>
+					</div>
+					<div class="appCarousel-cell span--100 align--center">
+						<div class="cell-content margin--center">
+							<img src="http://placehold.it/350x150" class="margin--center chunk">
+							<h3 class="text--bold">Rethought and simplified</h3>
+							<p>Mobile-first blurb that also touches on de-cluttered screens and clearer hierarchy. Ut porta viverra est, ut dignissim elit elementum.</p>
+						</div>
+					</div>
+				</div></div>
+
+				<div class="chunk padding--top">
+					<a href="https://play.google.com/store/apps/details?id=com.meetup&hl=en&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" class="display--inlineBlock appBadge"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" class="margin--center" height="51" /></a>
+					<a href="https://play.google.com/store/apps/details?id=com.meetup&hl=en&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" class="display--inlineBlock appBadge"><img alt="Get it on Google Play" src="assets/img/appStore.png" class="margin--center" /></a>
+				</div>
+			</div>
+
+		</div>
+	</div></section>
+
+<!-- 	<section class="stripe display--block atMedium_display--none"><div class="bounds bounds--wide">
+		<h3 class="text--headline chunk align--center">Preview the new Meetup with our app</h3>
+		<div class="js-appCarousel appCarousel chunk">
+			<div class="appCarousel-cell span--100 align--center">
+				<div class="cell-content margin--center">
+					<img src="http://placehold.it/350x150" class="margin--center chunk">
+					<h3 class="text--bold">More personalized</h3>
+					<p>We have made it even easier to find the Meetup that’s right for you, whether you want to get in shape, learn a new language, or network with industry colleagues. There’s something for everybody—come find what’s right for you.</p>
+				</div>
+			</div>
+			<div class="appCarousel-cell span--100 align--center">
+				<div class="cell-content margin--center">
+					<img src="http://placehold.it/350x150" class="margin--center chunk">
+					<h3 class="text--bold">Guage local interest</h3>
+					<p>Talk about how cool seeded MUGs are Pellentesque non dignissim neque. Ut porta viverra est, ut dignissim elit elementum ut.</p>
+				</div>
+			</div>
+			<div class="appCarousel-cell span--100 align--center">
+				<div class="cell-content margin--center">
+					<img src="http://placehold.it/350x150" class="margin--center chunk">
+					<h3 class="text--bold">Rethought and simplified</h3>
+					<p>Mobile-first blurb that also touches on de-cluttered screens and clearer hierarchy. Ut porta viverra est, ut dignissim elit elementum.</p>
+				</div>
+			</div>
+		</div>
+	</div></section> -->
+
+	<!--
+	=================================
+	LOCAL MUGS
+	=================================
+	-->
+
+	<section class="stripe">
+		<div class="bounds bounds--wide flush--bottom flush--top">
+			<div class="row">
+				<h3 class="row-item text--bold valign--middle">Happening nearby</h3>
+				<div class="row-item row-item--shrink valign--middle display--none atMedium_display--block">
+					<a href="#" class="button button--bordered button--small">More nearby</a>
+				</div>
+			</div>
+		</div>
+		<div class="bounds bounds--wide hscroll atMedium_hscroll--unclip">
+			<ul class="hscroll-content hscroll-content--cards gridList atMedium_gridList--has2 atLarge_gridList--has4 chunk">
+				<li class="gridList-item">
 					<a class="card card--group chunk inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(assets/img/placeholderMUG/1.png);">
 						<h4 class="text--bold">The Road Not Taken Hikes and Adventures</h4>
 					</a>
-					<p>Thursday, January 21 at 6:30pm</p>
+					<p>Thursday, February 3 at 6:30pm</p>
 					<div class="row">
 						<div class="row-item row-item--shrink valign--middle">
 							<div class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg)">Member Name</div>
@@ -114,11 +263,11 @@
 					</div>
 				</li>
 
-				<li>
+				<li class="gridList-item">
 					<a class="card card--group chunk inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(assets/img/placeholderMUG/2.png);">
 						<h4 class="text--bold">Dashing Whippets</h4>
 					</a>
-					<p>Saturday, January 16 at 7:00pm</p>
+					<p>Saturday, February 6 at 7:00pm</p>
 					<div class="row">
 						<div class="row-item row-item--shrink valign--middle">
 							<div class="avatar avatar--person avatar--small" style="background-image: url(https://s3.amazonaws.com/uifaces/faces/twitter/sauro/128.jpg)">Member Name</div>
@@ -127,11 +276,11 @@
 					</div>
 				</li>
 
-				<li>
+				<li class="gridList-item">
 					<a class="card card--group chunk inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(assets/img/placeholderMUG/3.png);">
 						<h4 class="text--bold">NY JavaScript</h4>
 					</a>
-					<p>Tuesday, January 19 at 6:30pm</p>
+					<p>Tuesday, February 9 at 6:30pm</p>
 					<div class="row">
 						<div class="row-item row-item--shrink valign--middle">
 							<div class="avatar avatar--person avatar--small" style="background-image: url(https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg)">Member Name</div>
@@ -140,11 +289,11 @@
 					</div>
 				</li>
 
-				<li>
+				<li class="gridList-item">
 					<a class="card card--group chunk inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(assets/img/placeholderMUG/4.png);">
 						<h4 class="text--bold">New York Soccer Project's Pick-up</h4>
 					</a>
-					<p>Tuesday, January 19 at 9:30am</p>
+					<p>Tuesday, February 9 at 9:30am</p>
 					<div class="row">
 						<div class="row-item row-item--shrink valign--middle">
 							<div class="avatar avatar--person avatar--small" style="background-image: url(https://s3.amazonaws.com/uifaces/faces/twitter/do_fox/128.jpg)">Member Name</div>
@@ -153,164 +302,12 @@
 					</div>
 				</li>
 			</ul>
-
-			<div class="align--center inverted">
-				<a href="#" class="button">
-					<span class="row">
-						<span class="row-item">
-							<span class="display--block">125 Meetups this week</span><span class="text--small text--secondary">New York, NY</span>
-						</span>
-					</span>
-				</a>
-			</div>
 		</div>
 
-		<!-- MOST POPULAR -->
-		<div class="js-tabContent display--none" id="mostPopular">
-			<ul class="gridList gridList--has1 atMedium_gridList--has2 atLarge_gridList--has4 chunk">
-				<li>
-					<a class="card card--group chunk inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://foundation.specialsnowflake.com/duotoneTester.php?url=http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg&colorDark=192550&colorLight=F00E2E);">
-						<h4 class="text--bold">New York Soccer Project's Pick-up</h4>
-					</a>
-					<p>Tuesday January 3 at 4:00pm</p>
-					<div class="row">
-						<div class="row-item row-item--shrink valign--middle">
-							<div class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg)">Member Name</div>
-						</div>
-						<div class="row-item valign--middle"><p>Hosted by Sarah</p></div>
-					</div>
-				</li>
-
-				<li>
-					<a class="card card--group chunk inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://foundation.specialsnowflake.com/duotoneTester.php?url=http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg&colorDark=192550&colorLight=F00E2E);">
-						<h4 class="text--bold">New York Soccer Project's Pick-up</h4>
-					</a>
-					<p>Tuesday January 3 at 4:00pm</p>
-					<div class="row">
-						<div class="row-item row-item--shrink valign--middle">
-							<div class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg)">Member Name</div>
-						</div>
-						<div class="row-item valign--middle"><p>Hosted by Sarah</p></div>
-					</div>
-				</li>
-
-				<li>
-					<a class="card card--group chunk inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://foundation.specialsnowflake.com/duotoneTester.php?url=http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg&colorDark=192550&colorLight=F00E2E);">
-						<h4 class="text--bold">New York Soccer Project's Pick-up</h4>
-					</a>
-					<p>Tuesday January 3 at 4:00pm</p>
-					<div class="row">
-						<div class="row-item row-item--shrink valign--middle">
-							<div class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg)">Member Name</div>
-						</div>
-						<div class="row-item valign--middle"><p>Hosted by Sarah</p></div>
-					</div>
-				</li>
-
-				<li>
-					<a class="card card--group chunk inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://foundation.specialsnowflake.com/duotoneTester.php?url=http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg&colorDark=192550&colorLight=F00E2E);">
-						<h4 class="text--bold">New York Soccer Project's Pick-up</h4>
-					</a>
-					<p>Tuesday January 3 at 4:00pm</p>
-					<div class="row">
-						<div class="row-item row-item--shrink valign--middle">
-							<div class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg)">Member Name</div>
-						</div>
-						<div class="row-item valign--middle"><p>Hosted by Sarah</p></div>
-					</div>
-				</li>
-			</ul>
-
-			<div class="align--center inverted">
-				<a href="#" class="button"><span class="display--block text--bold">125 Meetups this week</span><span class="text--small text--secondary">New York, NY</span></a>
-			</div>
+		<div class="align--center display--block atMedium_display--none">
+			<a href="#" class="button button--bordered chunk">More nearby</a>
 		</div>
-
-	</div></section>
-
-	<!--
-	=================================
-	CATEGORIES
-	=================================
-	-->
-	<div class="stripe stripe--noBorder"><div class="bounds bounds--wide">
-		<h3 class="text--headline align--center chunk">Explore new worlds</h3>
-		<ul class="gridList gridList--has2 atLarge_gridList--has4 chunk">
-		{{#each categories:i}}
-			<li {{#if i > 11}}class="display--none atLarge_display--inlineBlock"{{/if}}>
-				<a href="#">
-					<img src="./assets/img/categories/{{shortname}}.jpg" alt="{{name}}" class="span--100">
-					<p class="text--bold">{{name}}</p>
-					<span class="attachment display--none atMedium_display--inline">
-						<ul class="inlineblockList inlineblockList--bulleted text--small text--secondary">
-							{{#each best_topics:i}}
-								{{#if i < 3}}
-									<li>{{name}}</li>
-								{{/if}}
-							{{/each}}
-						</ul>
-					</span>
-				</a>
-			</li>
-		{{/each}}
-		</ul>
-		<button class="button button--bordered button--fullWidth display--block atLarge_display--none" on-click="showAllCategories">show more</button>
-	</div></div>
-
-	<div class="stripe stripe--noBorder"><div class="bounds bounds--wide">
-		<div class="border--top padding--top chunk">
-			<h3 class="text--secondary">About us</h3>
-		</div>
-		<ul class="gridList gridList--has1 atMedium_gridList--has3">
-			<li>
-				<div class="column">
-					<h4 class="column-item column-item--shrink text--bold">Had we not met...</h4>
-					<p class="column-item chunk">Meetup was born after our founder Scott found that he didn’t know his neighbors after 9/11. He realized the importance of creating real lasting community and that we haven’t yet all the people that will be important in our lives.</p>
-					<div class="column-item column-item--shrink attachment"><a href="#" class="link row">{{{helpers.svgIcon('play', 'valign--middle row-item row-item--shrink')}}}<span class="row-item">Watch our origin story</span></a></div>
-				</div>
-			</li>
-
-			<li>
-				<div class="column">
-					<h4 class="column-item column-item--shrink text--bold">The New Meetup</h4>
-					<p class="column-item chunk">We have a brand new look! Also, we’re reimagining our apps and website starting with mobile. Our biggest focus in the redesign was surfacing things that people never knew they were interested in, and helping people uncover the best version of themselves</p>
-					<div class="column-item column-item--shrink attachment"><a href="#" class="link row">{{{helpers.svgIcon('textBlock', 'valign--middle row-item row-item--shrink')}}}<span class="row-item">Read about the redesign</span></a></div>
-				</div>
-			</li>
-
-			<li>
-				<div class="column">
-					<h4 class="column-item column-item--shrink text--bold">How does Meetup work?</h4>
-					<p class="column-item chunk">Local communities are started by passionate leaders who see the value of face-to-face community. Start a brand new meetup in your city or look to other cities to start a local version of a bigger movement. Check out our inspiring organizer stories.</p>
-					<div class="column-item column-item--shrink attachment"><a href="#" class="link row">{{{helpers.svgIcon('play', 'valign--middle row-item row-item--shrink')}}}<span class="row-item">Watch organizer stories</span></a></div>
-				</div>
-			</li>
-		</ul>
-	</div></div>
-
-	<div class="stripe stripe--noBorder"><div class="bounds bounds--wide">
-		<div class="well spreadable atMedium_spreadable--spread spreadable--center align--center padding--top">
-			<p class="spreadable-item spreadable-item--shrink text--bold valign--middle chunk">Find out what Meetups your friends are going to</p>
-			<div class="spreadable-item spreadable-item--shrink valign--middle chunk"><a href="#" class="button button--facebook">{{{helpers.svgIcon('facebook', 'valign--middle')}}}<span class="valign--middle margin--left">Sign up with Facebook</span></a></div>
-		</div>
-	</div></div>
-
-	<div class="stripe stripe--noBorder"><div class="bounds flush--bottom">
-		<div class="row">
-			<div class="row-item valign--middle">
-				<h3 class="text--headline chunk">Download the New Meetup</h3>
-				<p class="chunk">We’ve reimagined Meetup on iOS and Android. Download our new apps on from Google Play and the App Store.</p>
-				<a href="#" class="link chunk"><span>Read about the redesign</span> {{{helpers.svgIcon('arrowRight', 'valign--middle')}}}</a>
-
-				<div class="chunk">
-					<a href="https://play.google.com/store/apps/details?id=com.meetup&hl=en&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" class="display--inlineBlock appBadge"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" class="margin--center" height="51" /></a>
-					<a href="https://play.google.com/store/apps/details?id=com.meetup&hl=en&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" class="display--inlineBlock appBadge"><img alt="Get it on Google Play" src="assets/img/appStore.png" class="margin--center" /></a>
-				</div>
-
-			</div>
-			<div class="row-item valign--middle display--none atMedium_display--block"><img src="assets/img/appMock.png" alt="App Mock"/></div>
-		</div>
-	</div></div>
+	</section>
 
 	<footer class="stripe stripe--inverted inverted">
 		<div class="bounds align--center">
