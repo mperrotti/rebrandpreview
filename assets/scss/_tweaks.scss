@@ -42,6 +42,12 @@
 	}
 }
 
+._tweaks_atMedium_display--inlineFlex {
+	@include atMediaUp(medium) {
+		@include display(inline-flex);
+	}
+}
+
 ._hack_card--group--empty { // Hack to not show the scrim on empty-state cards
 	&:before {
 		display: none;

@@ -150,62 +150,6 @@ a {
 */
 
 /* _buttons.scss */
-$_hoverChange: 8%;
-
-.button {
-	background: $C_accent;
-	box-shadow: none !important;
-	color: $C_textPrimaryInverted;
-	line-height: $line-height; // temporary hacky fix for weird button text alignment
-	//min-height: ($font-size * $line-height) + $space;
-	padding: $space-half $space;
-
-	use {
-		fill: $C_textPrimaryInverted;
-	}
-
-	&:hover {
-		background: lighten($C_accent, $_hoverChange) !important;
-	}
-}
-
-.button--primary {
-	background: $C_accent !important;
-	&:hover {
-		background: darken($C_accent, $_hoverChange) !important;
-	}
-}
-
-// .button--small { //
-// 	min-height: 0;
-// }
-
-/* same as in old SQ2, but with rebrand colors */
-.button--bordered {
-	// @include color-all($C_link);
-	background: transparent !important;
-	border: 1px solid $C_border;
-	color: $C_textPrimary;
-	font-weight: $W_medium;
-	// &:hover,
-	// &:active,
-	// &:focus {
-	// 	background: transparentize($C_link, .8) !important;
-	// }
-
-	// .inverted & {
-	// 	color: $C_textPrimaryInverted;
-	// 	border-color: 1px solid $C_textPrimaryInverted;
-	// 	&:hover,
-	// 	&:active,
-	// 	&:focus {
-	// 		background: opacify($C_textPrimaryInverted, .8) !important;
-	// 		color: $C_textPrimary;
-	// 	}
-	// }
-
-}
-
 .button--contrast {
 	background: $C_contentBG !important;
 	color: $C_textPrimary;

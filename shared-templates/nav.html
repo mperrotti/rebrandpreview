@@ -6,20 +6,13 @@
 	-->
 	<div class="row row--noGutters row-item row-item--shrink valign--middle _tweak_atMedium_display--flex display--none">
 
-		<div class="row row--noGutters row-item row-item--shrink mainNav-item">
-			{{{helpers.svgIcon('search', 'row-item row-item--shrink valign--middle icon--s _proto_nav-icon')}}}
-			<div class="row-item valign--middle">Find</div>
-		</div>
-
-		<div class="row row--noGutters row-item row-item--shrink mainNav-item">
-			{{{helpers.svgIcon('plus', 'row-item row-item--shrink valign--middle icon--s _proto_nav-icon')}}}
-			<div class="row-item valign--middle">Create <span class="display--none atLarge_display--inlinee">a Meetup</span></div>
+		<div class="valign--middle row-item row-item--shrink text--bold mainNav-item">
+			Create a Meetup
 		</div>
 
 		{{#if loggedIn}}
-			<div class="row row--noGutters row-item row-item--shrink mainNav-item">
-				{{{helpers.svgIcon('user', 'row-item row-item--shrink valign--middle icon--s _proto_nav-icon')}}}
-				<div class="row-item valign--middle">Invite <span class="display--none atLarge_display--inlinee">friends {{profileMenu}}</span></div>
+			<div class="valign--middle row-item row-item--shrink text--bold mainNav-item">
+				Invite
 			</div>
 		{{/if}}
 
