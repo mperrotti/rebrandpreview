@@ -18,6 +18,7 @@
 		fill: $C_textSecondary;
 	}
 }
+
 .link, .toggleButton {
 	.icon use {
 		fill: $C_link;
@@ -28,18 +29,39 @@
 	fill: $C_textPrimaryInverted;
 }
 
-.icon--hint use {
-	fill: $C_textTertiary;
+//
+// Style the icons
+//
+.icon--hint use,
+.userLiked--false use,
+.userLiked--undefined use {
+	fill: $C_border;
 }
 
-//
-// Write our own icon styles
-//
-.icon-chevronDown use {
-	fill: $C_link;
+.userLiked--true {
+	@include animation(like 150ms ease-in);
+	border-radius: 999px;
+
+	use {
+		fill: $C_accent;
+	}
+
 }
 
-.icon-card-join {
-	width: $media-s;
-	height: $media-s;
+.icon--s {
+	height: $font-size;
+	width: $font-size;
+}
+
+.icon--textInline {
+	height: $font-size-small;
+	width: $font-size-small;
+}
+
+.icon-calendar--sched use {
+	fill: $C_success;
+}
+
+.icon-calendar--canceled use {
+	fill: $C_attention;
 }

@@ -24,5 +24,8 @@
   "license": "MIT",
   "devDependencies": {
     "flickity": "~1.1.2"
+  },
+  "resolutions": {
+    "meetup-swatches": "release/3.0.0"
   }
 }

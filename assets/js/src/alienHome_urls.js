@@ -24,7 +24,8 @@ router.add('', function(context){ // homepage
 		template: 'main-template',
 		events: {
 			"renderNavigation" : renderNavigation(),
-			"complete"         : main_onComplete
+			"complete"         : main_onComplete,
+			"vidPause"         : vidPause
 		},
 		header : {
 			title: 'Meetup'
