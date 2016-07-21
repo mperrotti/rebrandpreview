@@ -12,6 +12,21 @@ helpers.dateFormat = function(timeString, format){
 	};
 };
 
+helpers.dateFormatSpecial = function(timeString, format){
+	var sevenDays = 604800000,
+			now       = moment();
+
+	if (window.moment) {
+		if (timeString < sevenDays + now) { // if timeString is this week...
+			return moment(timeString).calendar();
+		} else { //if timeString is >1 week away...
+			return moment( timeString ).format("MMM Do [at] h:mm a");
+		}
+	} else {
+		return timeString;   //  moment plugin not available. return data as is.
+	}
+};
+
 helpers.dateRelative = function(timeString){
 	if (window.moment) {
 	  return moment( timeString ).fromNow();

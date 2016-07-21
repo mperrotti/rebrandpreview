@@ -9,8 +9,7 @@
 var Nav = function(opts){
 	this.$el = null;
 	this.current_view = null;
-	// this.actions = null;
-	// this.navItems = false;
+	this.profileMenu = false;
 	this.show(opts);
 }
 
@@ -31,6 +30,15 @@ Nav.prototype = {
 					self.hide(event);
 				}
 			});
+
+			self.$el.on('click', '#profileMenuToggle', function(){
+				if (self.profileMenu == false) {
+					views.profileMenu_show();
+				} else {
+					views.profileMenu_hide();
+				}
+			});
+
 			// reveal
 			setTimeout(function() {
 
@@ -60,7 +68,7 @@ Nav.prototype = {
 		// }
 
 		// ATTACH AND RENDER
-		this.$el = $('<nav class="mainNav row"></nav>');
+		this.$el = $('<div class="navWrapper"></div>');
 		$('body').addClass('hasNav').prepend(this.$el);
 
 		this.current_view = new Components.Nav({

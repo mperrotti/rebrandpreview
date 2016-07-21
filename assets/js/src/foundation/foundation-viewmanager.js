@@ -317,6 +317,18 @@ ViewManager.prototype = {
 		this._nav = new Nav(opts);
 	},
 
+	profileMenu_show: function() {
+		this._nav.profileMenu = true;
+		$('#profileMenu').addClass('_proto_profileMenu--open');
+		$('#profileMenuToggle').addClass('_proto_profileMenuToggle--open');
+	},
+
+	profileMenu_hide: function() {
+		this._nav.profileMenu = false;
+		$('#profileMenu').removeClass('_proto_profileMenu--open');
+		$('#profileMenuToggle').removeClass('_proto_profileMenuToggle--open');
+	},
+
 	handle_modal_outclick: function(e) {
 		if (!this._modal.open) {
 			return false;
@@ -347,6 +359,25 @@ ViewManager.prototype = {
 			this.momentary_hide();
 		}
 	},
+
+	handle_profileMenu_outclick: function(e) {
+		if (!this._nav || !this._nav.profileMenu) { //$('#profileMenuToggle').is(e.target)
+			return false;
+		}
+
+		// if the target of the click isn't the container
+		// nor a descendant of the container
+		if (!$('#profileMenu').is(e.target) && $('#profileMenu').has(e.target).length === 0) {
+
+			// SO HACKY: if the target of the click isn't the toggle button
+			// nor a descendant of the toggle button element
+			if (!$('#profileMenuToggle').is(e.target) && $('#profileMenuToggle').has(e.target).length === 0) {
+				this.profileMenu_hide();
+			}
+		}
+
+	},
+
 
 	escape: function() {
 		location.hash = '#!/';
@@ -393,6 +424,7 @@ ViewManager.prototype = {
 			self.handle_modal_outclick(e);
 			self.handle_momentary_outclick(e);
 			self.handle_dialog_outclick(e);
+			self.handle_profileMenu_outclick(e);
 		});
 
 		this.oninit();

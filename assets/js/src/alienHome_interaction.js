@@ -5,39 +5,70 @@
 */
 function renderNavigation() {
 	if ($('.mainNav').length < 1) {
+		var isLoggedIn = getParameterByName('loggedIn') || false;
+		// console.log(isLoggedIn);
+
 		views.nav_show({
-			"loggedIn": false,
+			"loggedIn": isLoggedIn,
 			"isModern": false
 		});
 
-		// Change to sticky nav
-		setTimeout(function() { // using this to deal with weird Waypoints bug
-			$('.mainNav').waypoint({
-				handler: function(direction) {
-					if (direction == 'up') {
-						// over photo
-						$(this).addClass('mainNav--photoOverlay inverted'); // change nav bg
-						$(this).find('.button--bordered').addClass('button--contrast').removeClass('button--bordered'); // change button
-						$(this).find('.js_logo--script').removeClass('display--none').addClass('display--inlineBlock'); // show script logo
-						$(this).find('.js_logo--swarm').removeClass('display--inlineBlock').addClass('display--none'); // hide swarm logo
-						$(this).find('.js_signUp').toggleClass('display--none');
-						//console.log($(this).find('.js_signUp'));
-					} else {
-						// over content
-						$(this).removeClass('mainNav--photoOverlay inverted');
-						$(this).find('.button--contrast').addClass('button--bordered').removeClass('button--contrast');
-						$(this).find('.js_logo--script').removeClass('display--inlineBlock').addClass('display--none'); // show script logo
-						$(this).find('.js_logo--swarm').removeClass('display--none').addClass('display--inlineBlock'); // hide swarm logo
-						$(this).find('.js_signUp').toggleClass('display--none');
+		views.data.isLoggedIn = isLoggedIn;
+
+		// if (!isLoggedIn) {
+			// Change to sticky nav
+			setTimeout(function() { // using this to deal with weird Waypoints bug
+				$('.mainNav').waypoint({
+					handler: function(direction) {
+						if (direction == 'up') {
+							// over photo
+								// $(this).addClass('mainNav--photoOverlay inverted'); // change nav bg
+							// $(this).find('.js_logo--script').removeClass('display--none').addClass('display--inlineBlock'); // show script logo
+							// $(this).find('.js_logo--swarm').removeClass('display--inlineBlock').addClass('display--none'); // hide swarm logo
+							$(this).find('.js_logo--swarm').addClass('_proto_nav-logo--offScreen--btm'); // hide swarm logo trns
+							$(this).find('.js_logo--script').removeClass('_proto_nav-logo--offScreen--top'); // show script logo trns
+								// $(this).find('.js_signUp').toggleClass('display--none');
+						} else {
+							// over content
+								// $(this).removeClass('mainNav--photoOverlay inverted');
+							// $(this).find('.js_logo--script').removeClass('display--inlineBlock').addClass('display--none'); // hide script logo
+							// $(this).find('.js_logo--swarm').removeClass('display--none').addClass('display--inlineBlock'); // show swarm logo
+								// $(this).find('.js_signUp').toggleClass('display--none');
+							$(this).find('.js_logo--swarm').removeClass('_proto_nav-logo--offScreen--btm'); // hide swarm logo trns
+							$(this).find('.js_logo--script').addClass('_proto_nav-logo--offScreen--top'); // show script logo trns
+
+						}
+					},
+					offset: function() {
+						return -1 * $('.stripe--photoHero').height();
 					}
-				},
-				offset: function() {
-					return -1 * $('.stripe-heroContent').height();
-				}
-			});
-		}, 1);
-		$('.mainNav').addClass('mainNav--sticky mainNav--photoOverlay inverted');
+				});
+			}, 1);
+		// }
+
+		// $('.mainNav').addClass('mainNav--sticky mainNav--photoOverlay inverted');
+		$('.mainNav').addClass('mainNav--sticky');
 	}
+}
+
+function toggleUserMenu() {
+
+}
+
+/*
+-----------------------------
+	VIDEO HEADER CONTROL
+-----------------------------
+*/
+function vidPause() {
+	var $vid = $('.videoFill')[0];
+
+	if ($vid.paused) {
+		$vid.play();
+	} else {
+		$vid.pause();
+	}
+
 }
 
 /*
@@ -105,6 +136,18 @@ function priorityPlus_toggle(event) {
 // }
 
 function main_onComplete() {
+
+	var $mugCarousel = $('.js-mugCarousel').flickity({
+		// options
+		cellAlign: 'left',
+		imagesLoaded: true,
+		pageDots: false,
+		wrapAround: true
+	});
+
+	$mugCarousel.css({ opacity: 1 });
+
+	/*
 	// Initialize app carousel
 	var $storiesGallery = $('.js-storiesCarousel').flickity({
 		prevNextButtons: false,
@@ -128,4 +171,6 @@ function main_onComplete() {
 		contain: true,
 		imagesLoaded: true
 	});
+	*/
+
 }

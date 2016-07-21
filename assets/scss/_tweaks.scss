@@ -6,10 +6,6 @@
 	@include justify-content(center);
 }
 
-.span--100 { //already there, just need to update
-	width: 100%;
-}
-
 .runningText img {
 	max-width: 100%;
 }
@@ -43,6 +39,31 @@
 	color: $C_link;
 	use {
 		fill: $C_link;
+	}
+}
+
+._tweaks_atMedium_display--inlineFlex {
+	@include atMediaUp(medium) {
+		@include display(inline-flex);
+	}
+}
+
+._hack_card--group--empty { // Hack to not show the scrim on empty-state cards
+	&:before {
+		display: none;
+	}
+}
+
+._tweak_text--heavy { // allows this text to be bold even on `.text--big` where font-weight is set to $W_medium
+	font-weight: $W_bold;
+	.inverted & {
+		font-weight: $W_bold;
+	}
+}
+
+._tweak_atMedium_display--flex {
+	@include atMediaUp(medium) {
+		display: flex;
 	}
 }
 
@@ -88,4 +109,43 @@ $dotTimeBase: 500;
 	@include atMediaUp(large) {
 		margin-left: $space;
 	}
+}
+
+/*
+-----------------------------
+	NEW: ANIMATION
+-----------------------------
+// TODO: This isn't at all scalable yet.
+//       Come up with plan for animations in SQ3.
+*/
+
+/* NEW: _transitions.scss */
+$trans-dur   : 300ms;
+$trans-curve : ease-in;
+
+.trans {
+	@include transition-duration($trans-dur);
+	@include transition-timing-function($trans-curve);
+}
+
+.trans--fadeOut {
+	@include transition-property(opacity);
+	opacity: 0;
+}
+
+.trans--fadeIn {
+	@include transition-property(opacity);
+	opacity: 1;
+}
+
+.trans--fadeOutLeft {
+	@include transition-property(transform, opacity);
+	@include transform(translateX(-50px));
+	opacity: 0;
+}
+
+.trans--fadeInLeft {
+	@include transition-property(transform, opacity);
+	@include transform(translateX(0px));
+	opacity: 1;
 }

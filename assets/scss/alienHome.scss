@@ -1,7 +1,6 @@
-@import '../../bower_components/meetup-swatches/sass/colors';
-@import '../../bower_components/sassquatch2/sass/globals';
+// @import '../../bower_components/meetup-swatches/sass/colors';
+// @import '../../bower_components/sassquatch2/sass/globals';
 @import '../../bower_components/sassquatch2/sass/util';
-@import 'globals-sq3';
 @import 'colors-rebrand';
 @import 'tweaks'; // TO BE CONSIDERED AS GLOBAL CHANGES
 @import 'icons';
@@ -18,12 +17,18 @@ SQ3 CANDIDATE
 	TYPE
 -----------------------------
 */
+// $font : "Graphik", helvetica, arial, sans-serif;
 
 /* _body-text.scss */
-body {
-	font-family: $font;
+// body {
+// 	font-family: $font;
+// }
+
+._proto_text--green {
+	color: $C_success;
 }
 
+/*
 a {
 	color: inherit;
 	text-decoration: none;
@@ -35,8 +40,9 @@ a {
 		}
 	}
 }
+*/
 
-/* _headings.scss */
+/* _headings.scss
 .text--display {
 	font-weight: $W_bold;
 
@@ -52,14 +58,16 @@ a {
 .text--headline {
 	font-weight: $W_bold;
 }
+*/
 
-/* _type.scss */
+/* _type.scss
 %link {
 	@include color-all($C_link);
 	&:hover, &:focus, &:active {
 		text-decoration: underline;
 	}
 }
+*/
 
 /*
 -----------------------------
@@ -142,61 +150,6 @@ a {
 */
 
 /* _buttons.scss */
-$_hoverChange: 8%;
-
-.button {
-	background: $C_accent;
-	box-shadow: none !important;
-	color: $C_textPrimaryInverted;
-	line-height: $line-height; // temporary hacky fix for weird button text alignment
-	//min-height: ($font-size * $line-height) + $space;
-	padding: $space-half $space;
-
-	use {
-		fill: $C_textPrimaryInverted;
-	}
-
-	&:hover {
-		background: lighten($C_accent, $_hoverChange) !important;
-	}
-}
-
-.button--primary {
-	background: $C_accent !important;
-	&:hover {
-		background: darken($C_accent, $_hoverChange) !important;
-	}
-}
-
-// .button--small { //
-// 	min-height: 0;
-// }
-
-/* same as in SQ2, but with rebrand colors */
-.button--bordered {
-	@include color-all($C_link);
-	background: transparent !important;
-	border: $btn-border;
-	font-weight: $W_normal;
-	&:hover,
-	&:active,
-	&:focus {
-		background: transparentize($C_link, .8) !important;
-	}
-
-	.inverted & {
-		color: $C_textPrimaryInverted;
-		border-color: 1px solid $C_textPrimaryInverted;
-		&:hover,
-		&:active,
-		&:focus {
-			background: opacify($C_textPrimaryInverted, .8) !important;
-			color: $C_textPrimary;
-		}
-	}
-
-}
-
 .button--contrast {
 	background: $C_contentBG !important;
 	color: $C_textPrimary;
@@ -213,17 +166,12 @@ $_hoverChange: 8%;
 }
 
 /* _card.scss */
-.card--group {
-	border-top: none;
-	display: block; // killing @include valignChildren(bottom);
-	line-height: $line-height; // killing @include valignChildren(bottom);
-	&:before { display: none; } // killing @include textProtectionScrim();
-
-	h4 {
-		font-size: $font-size; // killing text--small in cards
-	}
-
-}
+// .card--group {
+// 	border-top: none;
+// 	display: block; // killing @include valignChildren(bottom);
+// 	line-height: $line-height; // killing @include valignChildren(bottom);
+// 	&:before { display: none; } // killing @include textProtectionScrim();
+// }
 
 /* NEW: _priorityPlus.scss */
 .priorityPlus {
@@ -301,42 +249,6 @@ $_tabBorder: 4px; // no change, just needed the var
 	background: $C_collectionBG;
 }
 
-/*
------------------------------
-	NEW: ANIMATION
------------------------------
-// TODO: This isn't at all scalable yet.
-//       Come up with plan for animations in SQ3.
-*/
-
-/* NEW: _transitions.scss */
-.trans {
-	@include transition-duration($trans-dur);
-	@include transition-timing-function($trans-curve);
-}
-
-.trans--fadeOut {
-	@include transition-property(opacity);
-	opacity: 0;
-}
-
-.trans--fadeIn {
-	@include transition-property(opacity);
-	opacity: 1;
-}
-
-.trans--fadeOutLeft {
-	@include transition-property(transform, opacity);
-	@include transform(translateX(-50px));
-	opacity: 0;
-}
-
-.trans--fadeInLeft {
-	@include transition-property(transform, opacity);
-	@include transform(translateX(0px));
-	opacity: 1;
-}
-
 
 /*
 -----------------------------
@@ -389,19 +301,53 @@ $_tabBorder: 4px; // no change, just needed the var
 // Full video bg
 // NOTE: need a x-browser solution
 .videoFill {
-  position:absolute;
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
+	display: none;
+	position:absolute;
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+
+	@include atMediaUp(medium) {
+		display: block;
+	}
+
+}
+
+._proto_playBtn {
+	border-radius: 999px;
+	height: $media-m;
+	opacity: .5;
+	padding: 0;
+	width: $media-m;
+	display: inline-flex;
+
+	@include atMediaUp(medium) {
+		display: none;
+	}
+
+	.icon {
+		height: $media-s;
+		width: $media-s;
+
+		use {
+			fill: $C_textSecondary
+		}
+
+	}
+
+}
+
+.stripe-heroContent {
+	padding-top: 0;
 }
 
 // "Download the app" buttons
 .appBadge {
 	background: black;
-	border-radius: 3px;
-	width: 100%;
+	border-radius: $defaultRadius;
+	// margin-right: $space-half;
+	// width: 47.7%;
 	@include atMediaUp(medium) {
-		margin-right: $space-half;
 		width: auto;
 	}
 }
@@ -409,9 +355,11 @@ $_tabBorder: 4px; // no change, just needed the var
 // ONLY FOR THE BOARD DEMO. KILL THIS STYLE WITH FILE
 .ghettoScrim {
 	min-height: 70vh;
+	margin-top: $view-head-height;
 
 	@include atMediaUp(medium) {
-		min-height: 384px;
+		min-height: $block-6;
+		margin-top: $view-head-height-tablet;
 		// .stripe-heroContent {
 		// 	min-height: 0;
 		// }
@@ -436,3 +384,69 @@ $_tabBorder: 4px; // no change, just needed the var
 	box-shadow: none;
 }
 
+._proto_nav-icon {
+	margin-right: $space-quarter;
+}
+
+._proto_appMock-container {
+	max-width: $block-6;
+	margin: 0 auto;
+
+	@include atMediaUp(medium) {
+		width: 33% !important;
+	}
+
+	@include atMediaUp(large) {
+		width: 50% !important;
+	}
+}
+
+// MUG Carousel styles
+.flickity-prev-next-button {
+	top: 80px; // half of card height
+	transform: translateY(-50%); // used to "center" it
+	-webkit-transform: translateY(-50%);
+
+	&:hover {
+		background: transparent;
+	}
+
+}
+
+.flickity-prev-next-button .arrow {
+	fill: $C_accent;
+}
+
+.flickity-prev-next-button.next {
+	right: $space + $space-half; // "$space" accounts for cell padding, "$space-half" gives the arrow a little room to breath
+}
+
+.flickity-prev-next-button.previous {
+	left: $space-half; // no left cell padding, so "$space-half" gives the arrow a little room to breath
+}
+
+@media only screen and (min-width: 1112px) { //$bounds-wide area excluding padding (1068px) plus arrow width (44px)
+	.flickity-prev-next-button.next {
+		right: -28px; // negative value of arrow size (44px) + $space (16px)
+	}
+
+	.flickity-prev-next-button.previous {
+		left: -44px; // negative value of arrow size (44px)
+	}
+
+	.flickity-prev-next-button {
+		background: transparent;
+	}
+}
+
+@include atMediaUp(medium) {
+	.atMedium_gridList--has2 .flickity-slider .gridList-item {
+		width: 50%;
+	}
+}
+
+@include atMediaUp(large) {
+	.atLarge_gridList--has4 .flickity-slider .gridList-item {
+		width: 25%;
+	}
+}
