@@ -13,6 +13,8 @@ function renderNavigation() {
 			"isModern": false
 		});
 
+		views.data.isLoggedIn = isLoggedIn;
+
 		// if (!isLoggedIn) {
 			// Change to sticky nav
 			setTimeout(function() { // using this to deal with weird Waypoints bug

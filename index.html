@@ -41,7 +41,11 @@
 
 				<h3 class="text--display1 _tweak_text--heavy">We are what we do</h3>
 				<p class="chunk text--bold">Meetup and do the things you wish you did more of</p>
-				<a href="#" class="button button--primary">Sign Up</a>
+				{{#if isLoggedIn}}
+					<a href="#getTheApp" class="button button--primary">Get the App</a>
+				{{else}}
+					<a href="#" class="button button--primary">Sign Up</a>
+				{{/if}}
 			</div>
 		</div>
 	</div>
@@ -167,7 +171,7 @@
 		</ul>
 	</div></section>
 
-	<section class="stripe"><div class="bounds bounds--wide flush--bottom">
+	<section class="stripe" id="getTheApp"><div class="bounds bounds--wide flush--bottom">
 		<div class="spreadable atMedium_spreadable--spread">
 
 			<div class="spreadable-item valign--middle">

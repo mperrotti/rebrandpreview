@@ -105,14 +105,7 @@ gimme.apiKey = "7060231d422c3421e3c13406e606631"; // 7060231d422c3421e3c13406e60
 				now = new Date().getTime(),
 				setupTime = localStorage.getItem('setupTime');
 
-		console.log(localStorage.getItem('cachedAPI') === null);
-		console.log(setupTime === null);
-		console.log(now-setupTime > hours*60*60*1000);
-		console.log(moment(now).format('llll'));
-		console.log(setupTime);
-		console.log(moment(setupTime).format('llll'));
-
-		if (localStorage.getItem('cachedAPI') === null || setupTime === null || now-setupTime > hours*60*60*1000 || getParameterByName('refresh')) { //getParameterByName('refresh')
+		if (localStorage.getItem('cachedAPI') === null || setupTime === null || now-setupTime > hours*60*60*1000 || getParameterByName('refresh')) {
 			localStorage.clear();
 			gimme.get(shoppingList, true).then(function(data){
 				console.log('pulling API data');
